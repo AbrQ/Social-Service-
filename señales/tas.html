@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Aproximación de las señales</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">  
+
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+ 
+
+	<link rel="stylesheet" href="tas.css">
+
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>I. Teoría de la aproximación de señales</h1>
+		</div>
+	</header>
+
+	<center>
+			<nav>
+				<ul>
+					<li><a href="index.html">PÁGINA PRINCIPAL</a></li>
+					<li><a href="contenido.html">BIBLIOGRAFÍA</a></li>
+					<li><a href="contenidoCurso.html">CONTENIDO DEL CURSO</a></li>
+					<li><a href="ejercicios.html">EJERCICIOS</a></li>
+				</ul>
+			</nav>
+			</center>
+
+	<div class="container">
+		<section class="main row">
+		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+				<h3>Objetivo</h3>
+				El alumno visualizará la serie de Fourier como una aproximación de funciones ortogonales complejas.
+			</p>
+		</article>
+	</section>
+</div>
+		
+		<div class="cuerpo"><p>
+			<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<br><br><font color="red"><h2>Producto interno (producto escalar).</h2></font><br><br>
+			<h4>
+				El producto interno de R<sup>n</sup> es una función <,> definida por: <br><br>
+				<center><i> < u,v > = a<sub>1</sub>b<sub>1</sub> + a<sub>2</sub>b<sub>2</sub> + ... + a<sub>n</sub>b<sub>n</sub> </i></center><br>
+				<center>para <i>u = [a<sub>1</sub>,a<sub>2</sub>,...,a<sub>n</sub>]<sup>T</sup>, v = [b<sub>1</sub>,b<sub>2</sub>,...,b<sub>n</sub>]<sup>T</sup> &isin; R<sup>n</sup>.</i></center><br>
+				El producto interno <,> satisface las siguientes propiedades:<br><br>
+				1. Linealidad<br>
+				2. Simetría<br>
+				3. Definición positiva<br><br>
+				Con el producto interno manejamos conceptos geométricos tales como longitud de un vector, ángulo entre dos vectores, ortogonalidad, etc.<br><br><br>
+				</h4>
+
+				<font color="red"><h2>Espacio del producto interno</h2></font><br><br>
+				<h4>
+				Definición: <i>Un producto interno de un espacio vectorial V es una asignación tal que para cualesquier dos vectores u,v &isin; V, existe un número real < u,v > que satisface las siguientes propiedades:</i><br><br>
+				1. Linealidad: <i>< au + bv, w > = a< u,w > + b< v,w ></i><br>
+				2. Simetría: <i>< u,v > = < v,u ></i><br>
+				3. Definición positiva: <i>Para cualquier u &isin; V, < u,u > &ge; 0; y < u,u > = 0 si y solo si u = 0.</i><br><br>
+				El espacio vectorial V con un producto interno es llamado <i><u>espacio con producto interno</u></i> (real). <br>
+				Para cada vector u &asin; V, la <u>norma</u> (también llamada <u>longitud</u>) de u está definida como el número: <br><br>
+				<center><img src="imagenOnce.jpg"/></center><br><br>
+				Si <i>||u|| = 1</i>, llamamos a <i>u</i> vector unitario y se dice que <i>u</i> está <u>normalizado</u>. <br><br>
+				Para cualquier vector no-cero v &isin; V, tenemos el vector unitario: <br><br>
+				<center><img src="imagenDoce.jpg"/></center><br><br>
+				Este proceso es llamado <i><u>normalización</u></i> de v.<br><br>
+				Si {x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>k</sub>} es un conjunto de vectores linealmente independiente en R<sup>n</sup>, <br>entonces k &le; n;
+				y k = n si y solo si {x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>k</sub>} es una <u>base</u> de R<sup>n</sup>.<br><br>
+				Dada una base <i>B = {x<sub>1</sub>, x<sub>2</sub>, ... , x<sub>n</sub>} de R<sup>n</sup></i>, cualquier elemento v &isin; R<sup>n</sup> puede escribirse únicamente como una combinación lineal <i>v = &sum;<sub>1</sub> &le; <sub>i</sub> &le; <sub>n</sub> c<sub>i</sub>x<sub>i</sub></i>  donde c<sub>i</sub> son números reales.<br><br>
+				Los números c<sub>i</sub> son llamados <u>componentes</u> de v relativos a la base B.<br><br>
+				Sea V un espacio con producto interno. Dos vectores u,v &isin; V se dice que son <u>ortogonales</u> si < u,v > = 0. <br><br>
+				Sea S un subconjunto no-vacío de un espacio con producto interno V. Se denota mediante S<sup>&perp;</sup> al conjunto de todos los vectores de V que son ortogonales a todo vector de S, y es denominado <u>complemento ortogonal</u> de S en V. En notación:<br><br>
+				<center>S<sup>&perp;</sup> := {v &isin; V | < v,u > = 0 for all u &isin; S}.</center><br><br>
+				Si S contiene solo un vector <i>u</i>, escribimos:<br><br>
+				<center>u<sup>&perp;</sup> = {v &isin; V | < v,u > = 0}.</center><br><br>
+				Sea <i>V</i> un espacio con producto interno. Un subconjunto <i>S = {u<sub>1</sub>, u<sub>2</sub>, ..., u<sub>k</sub> }</i> de vectores no-cero de <i>V</i> es llamado un <u>conjunto ortogonal</u> si cada par de vectores es ortogonal.<br><br>
+				<center>< u<sub>i</sub>, u<sub>j</sub> > = 0, 1 &le; i &le; j &le; k.</center><br><br>
+				Un conjunto ortogonal <i>S = {u<sub>1</sub>, u<sub>2</sub>, ..., u<sub>k</sub> }</i> es llamado un <u>conjunto ortonormal</u> si: <br><br>
+				<center><i>||u<sub>i</sub>|| = 1,    1 &le; i &le; k.</i></center><br><br>
+				Una base ortonormal de V es una base, la cual es también un conjunto ortonormal.<br>
+				Sean v<sub>1</sub>, v<sub>2</sub>, ..., v<sub>k</sub> una base ortogonal de un subespacio <i>W</i>, entonces para cualquier <i>w &isin; W</i><br><br><br>
+				<center><img src="imagenTrece.jpg"/></center><br><br>
+				Sea <i>V</i> un espacio con producto interno. Sea <i>v</i> un vector no-cero de <i>V</i>. Deseamos descomponer un vector arbitrario y en la forma <i>y = &alpha;v + z</i>, donde <i>z &isin; v<sup>&perp;</sup></i>.<br><br>
+				Como <i>z &perp; v</i>, tenemos <i>< v,y > = < &alpha;v,v > = &alpha;< v,v ></i>.<br><br>
+				Lo que implica que: <i>&alpha; = <sup>< v,y ></sup>/ <sub>< v,v ></sub></i><br><br>
+				Definimos al vector: <i>Proj<sub>v</sub>(y) = (<sup>< v,y ></sup>/<sub>< v,v ></sub>)v</i> <-- Llamado <u>Proyección ortogonal de y sobre v</u>.<br><br>
+				La transformación lineal <i>Proj<sub>u</sub>: V --> V</i> es llamada <u>Proyección de V sobre la dirección de u.</u><br><br>
+				Sean <i>u<sub>1</sub></i> y <i>u<sub>2</sub></i> funciones, y <i>c<sub>1</sub></i> y <i>c<sub>2</sub></i> constantes, la función <i>u<sub>3</sub> = c<sub>1</sub>u<sub>1</sub> + c<sub>2</sub>u<sub>2</sub></i> es una <u>combinación lineal</u> de <i>u<sub>1</sub></i> y <i>u<sub>2</sub></i>.<br><br>
+				Un espacio lineal de funciones es una <u>clase</u> de funciones tal que toda la combinación lineal de dos funciones de la clase permanecen en ella.<br><br><br><br><br>
+				</h4>
+				<font color="red"><h2>Funciones continuas segmentadas</h2></font><br>
+				 <h4>
+				Sea <i>f(x)</i> una función continua en el intervalo &alpha; < x < b, salvo posiblemente en un conjunto de puntos<br> x<sub>0</sub>, x<sub>1</sub>, x<sub>2</sub>,..., x<sub>n-1</sub>, x<sub>n</sub> donde <i>&alpha; = x<sub>0</sub> < x<sub>1</sub> < x<sub>2</sub> < ... < x<sub>n-1</sub> < b = x<sub>n</sub></i>.<br><br>
+				Se dice que <i>f(x)</i> es una <u>función continua segmentada (fcs)</u> si existen los límites:<br><br>
+				<center><img src="imagenCatorce.jpg"/></center><center><img src="imagenQuince.jpg"/></center><br><br>
+				<center><img src="imagenDieciseis.jpg"/></center><br><br>
+				La integral de una fcs se define como: 
+				<img src="imagenDiesiciete.jpg"/></center><br><br>
+				La cual existe al estar definidos los límites en todos los segmentos, por ejemplo, del primer segmento en <i>x = &alpha;</i> es <i>f(&alpha;+)</i>, en <i>x = x<sub>1</sub></i> es <i>f(x<sub>1</sub>-)</i>, etc.<br><br>
+				Sean f(x) y g(x) dos funciones continuas en el intervalo &alpha; &le; x &le; b, al cual dividimos en <i>N</i> subintervalos de longitud <i>&Delta;x = (b - a) / N</i>, y denotamos x<sub>k</sub> cualquier punto en el subintervalo <i>k</i>, entonces: <br><br>
+				<center><img src="imagenDieciocho.jpg"/></center><br>
+				Que es aproximadamente <u>el producto interno</u> de dos vectores de dimensión <i>N</i>.<br><br>
+				Tenemos entonces que el <u>producto interno</u> de <i>f(x) y g(x)</i> en el espacio de funciones C<sub>p</sub> (a,b) es <br><br>
+				<center><img src="imagenDiecinueve.jpg"/></center><br><br>
+				Que cumple con:<br><br>
+				<i>
+					1) < f,g + h > = < f,g > + < f,h ><br>
+					2) < f,g > = < g,f ><br>
+					3) < cf,g > = c< f,g ><br>
+					4) < f,f > &le; 0<br>
+					5) ||f||<sup>2</sup> = < f,f >
+				</i><br><br>
+				||f - g||<sup>2</sup> es la desviación del <u>valor cuadrático medio</u>.<br><br>
+				Dos funciones <i>f(x) y g(x)</i> en C<sub>p</sub>(a,b) son <u>ortogonales</u> cuando < f,g > = 0.<br><br>
+				Si ||f(x)|| = 1, f(x) está <u>normalizada</u>.<br><br>
+				Un conjunto de funciones f<sub>n</sub>(x) tiene norma cero, podemos formar un conjunto nuevo g<sub>n</sub>(x) = f<sub>n</sub>(x)/||f<sub>n</sub>(x)|| el cual es <u>ortonormal</u> en el intervalo fundamental.<br><br>
+				<center><h2>Falta imagen, lamina 44</h2></center>
+				<br><br><br>
+				<font color="red"><h2>Serie de Fourier generalizada</h2></font><br><br>
+				Sea <i>f(x)</i> una función en C<sub>p</sub>(a,b), el espacio de fcs definidas en el intervalo a < x < b.<br>
+				Sea <i>g(x)</i> con n = 1,2,... un conjunto ortonormal en C<sub>p</sub>(a,b); es posible representar <i>f(x)</i> como una combinación lineal de estas funciones, esto es: <br><br>
+				<center><img src="imagenVeinte.jpg"/></center><br>
+				con a < x < b. <br><br>
+				Multiplicando por g<sub>m</sub>(x) cada termino e integrando, tenemos:<br><br>
+				<center><img src="imagenVeintiuno.jpg"/></center><br><br>
+				Como < g<sub>m</sub>,g<sub>n</sub> > = 0; si m &ne; n y < g<sub>m</sub>, g<sub>n</sub> > = 1; si m = n<br><br>
+				< f,g<sub>n</sub> > = c<sub>n</sub> entonces<br><br> 
+				<center><img src="imagenVeintiuno.jpg"/></center><br><br>
+				En la serie de Fourier generalizada y c<sub>n</sub> son las constantes de Fourier.<br><br><br><br><br>
+				<font color="red"><h2>¿Qué es la teoría de la aproximación?</h2></font><br><br>
+				Se tiene una función <i>f</i> de un conjunto <i>S</i>, y se necesita valorar, pero no es posible o su valoración es costosa.<br>
+				Entonces, se determina una función <i>g</i> cercana a <i>f</i> tal que sea fácil de evaluar. La teoría de la aproximación consiste en determinar <i>g</i> y estudiarla.<br><br>
+				¿Cuándo?<br><br>
+				Cuando se conoce la fórmula de <i>f</i> perfectamente pero no es posible su evaluación, o cuando se desconoce la fórmula de <i>f</i> salvo en algunos datos, detalles o propiedades.<br><br>
+				La teoría de la aproximación comenzó a finales del siglo XIX con el estudio de la aproximación de funciones mediante polinomios y funciones racionales.<br>
+				Es sujeto de estudio que interactúa con varios aspectos del análisis real, complejo y funcional.<br>
+				Su popularidad se debe a su importancia en el desarrollo de algoritmos numéricos y la solución de problemas de optimización.<br><br>
+				Tenemos tres tipos de métodos de aproximación:<br><br>
+				1- <u>Aproximación local</u>, la cual explota la información del valor de la función en un punto junto con sus derivadas.<br><br>
+				2- <u>Aproximaciones L</u><sup>p</sup>, que encuentran una función cercana a la que deseamos evaluar en el sentido de una norma L<sup>p</sup>.<br>
+				Depende de la interpolación.<br><br>
+				3- <u>Regresiones</u>, las cuales se ven como una situación intermedia que depende de <i>m</i> momentos para encontrar <i>n</i> parámetros de la función de aproximación.<br><br>
+				<font color="blue">Aproximación local.</font><br><br>
+				El problema de la aproximación local de una función <i>f: R->R</i> es hacer uso de la información en un punto particular x<sub>0</sub> &isin; R, para producir una buena aproximación de <i>f</i> en una vecindad de x<sub>0</sub>.<br><br>
+				Entre los diferentes métodos disponibles existen dos de interés particular:<br><br>
+				<center>
+					* <u>Expansión en series de Taylor</u><br>
+					* <u>Aproximación Padé</u>
+				</center><br><br><br><br>
+				<font color="red"><h2>Serie de Taylor.</h2></font><br><br>
+				Si <i>f</i> puede representarse como una serie de potencias (expansión) en &alpha;, esto es: <br><br>
+				<center><img src="imagenVeintitres.jpg"/></center><br><br>
+				Sustituyendo C<sub>n</sub> en la serie, tenemos:<br><br>
+				<center><img src="imagenVeinticuatro.jpg"/></center><br>
+				La serie de Taylor de la funcion <i>f</i> en &alpha;<br><br>
+				Si &alpha; = 0, tenemos la serie de <u>Maclaurin</u>.<br><br>
+				<center><img src="imagenVeinticinco.jpg"/></center><br><br>
+				<h2>Aproximaciones <i>L<sup>p</sup></i></h2><br><br>
+				<h4>Las aproximaciones locales calculan el valor de una función en ciertos puntos particulares, pero en la mayoría de los casos interesa conocer los valores entre esos puntos.<br><br>
+				Este es el problema de la interpolacion.<br><br>
+				Algunos métodos son:<br>
+				*Interpolación lineal<br>
+				*Interpolación de Lagrange<br>
+				*Interpolación de Chebichev<br>
+				*Interpolación por segmentos<br><br>
+				<h2>Interpolación lineal.</h2><br><br>
+				<h4>
+				Asume la existencia de una colección de puntos<br><br>
+				<i>C = {f(x<sub>i</sub>, y<sub>i</sub>), i = 1,..., n }.</i> Para cada punto <i>x &isin; [x<sub>i-1</sub>, x<sub>i</sub>],</i> pordemos calcular <i>y</i> como:<br><br>
+				<center><img src="imagenVeintiseis.jpg"/></center><br><br>
+				Aunque esta aproximación es muy útil, puede ser ineficiente ya que:<br><br>
+				1.- No proporciona una función de aproximación, sino una colección de aproximaciones en cada intervalo;<br><br>
+				2.- Se requiere identificar el intervalo donde se calcula la aproximación, que puede ser costoso si el intervalo no es uniforme;<br><br>
+				3.- Tiene un pésimo desempeño con funciones no lineales.<br><br><br>
+				<h2>Regresiones.</h2><br><br><h4>
+				Dado un conjunto de variables endógenas observables <i>y<sub>i</sub>, i = 1,..., N,</i> que deseamos explicar en términos de un conjunto de variables exógenas<br><br>
+				<i>X<sub>i</sub> = {x<sub>i</sub><sup>1</sup>, x<sub>i</sub><sup>2</sup>,...,x<sub>i</sub><sup>k</sup>}, i = 1,...,N,</i> se debe encontrar un conjunto de parámetros &Theta; que resuelvan:<br><br>
+				<center><img src="imagenVeintisiete.jpg"/></center><br><br>
+				La idea es que &Theta; es elegida de modo que en promedio <i>G(X, &Theta;) es lo suficiente cercana a y</i>, tal que <i>G</i> es una "buena" aproximación de la función verdadera <i>F</i> en la región de x considerada.<br><br>
+				En otras palabras.<br><br>
+				Dados los puntos: (x<sub>i</sub>, y<sub>i</sub>), i = 1,...,n.<br><br>
+				El objetivo es encontrar una función <i>f(x; &beta;)</i> con &beta; &isin; R<sup>m</sup>, m &le; n; y con <i>y<sub>i</sub> = f(x<sub>i</sub>), i = 1,...,n</i>.<br><br>
+				<center><img src="imagenVeintiocho.jpg"/></center><br><br>
+				Ejemplo: Regresión de mínimos cuadrados.<br><br><br><br>
+				<h2>Polinomios de Legendre.</h2><br><br>
+				<h4>
+				Dada una funcion <i>f</i> definida en <i>[-1, 1]</i>, tenemos<br><br>
+				<center><img src="imagenVeintinueve.jpg"/></center><br><br>
+				La cual satisface para toda &lambda; real: <i>||f|| = |&lambda;| <sup>.</sup> ||f||</i><br><br>
+				<i>||f + g|| &le; ||f|| + ||g||</i>, ||f|| > 0<br><br>
+				Definimos además para cualquier <i>p &ge; 1</i> la norma p.<br><br>
+				<center><img src="imagenTreinta.jpg"/></center><br><br>
+				Que satisface para p &ge; 1<br><br>
+				<center><img src="imagenTreintaUno.jpg"/></center><br><br>
+				Ahora, dada <i>f</i> definida en <i>[-1, 1]</i>, buscamos el mínimo valor de <i>||f - p||</i>, para toda <i>p &isin; P<sub>n</sub></i>.<br>
+				La función <i>p &isin; P<sub>n</sub></i> que minimiza <i>||f - p||</i> es llamada la mejor aproximación de <i>f</i> con respecto a la norma.<br><br>
+				Sea: <img src="imagenTreintaDos.jpg"/><br>
+				Donde <i>{q<sub>0</sub>, q<sub>1</sub>, ... , q<sub>n</sub>}</i> es una base para <i>P<sub>n</sub></i>.<br><br>
+				Para encontrar la mejor aproximación buscamos minimizar: <img src="imagenTreintaTres.jpg"/><br><br>
+				Igualando a cero las derivada parciales de <i>E</i> tenemos para <i>0 &le; s &le; n</i>. <br><br>
+				<center><img src="imagenTreintaCuatro.jpg"/></center><br><br>
+				Esto nos da un sistema de ecuaciones lineales para determinar los coeficientes <i>a<sub>s</sub></i><br><br> 
+				<center><img src="imagenTreintaCinco.jpg"/></center><br><br>
+				donde: <img src="imagenTreintaSeis.jpg"/><br><br>
+				Si elegimos una base <i>{q<sub>0</sub>, q<sub>1</sub>,..., q<sub>n</sub>}</i> que cumpla con<br><br>
+				<center><img src="imagenTreintaSiete.jpg"/></center><br><br> 
+				Entonces: <img src="imagenTreintaOcho.jpg"/><br><br>
+				Podemos construir una base ortogonal comenzando <i>q<sub>0</sub>(x) = 1</i> y eligiendo cada <i>q<sub>k</sub>(x)</i> de modo que satisface: <br><br>
+				<center><img src="imagenTreintaNueve.jpg"/></center><br><br> 
+				Decimos que <i>q<sub>k</sub></i> es ortogonal en <i>[-1, 1]</i> para todos los polinomios en <i>P<sub>k - 1</sub></i><br><br>
+				Para determinar cada <i>q<sub>k</sub> &isin; P<sub>k</sub></i>, escalamos <i>q<sup>k</sup></i> de modo que el coeficiente de <i>x<sup>k</sup></i> es unitario.<br>
+				Donde <i>q<sub>r</sub></i> y <i>q<sub>s</sub></i> son mutuamente ortogonales si <i>r &ne; s</i><br><br>
+				Sea: <img src="imagenCuarenta.jpg"/><br><br>
+				Resolvemos un sistema lineal de <i>k</i> ecuaciones para obtener los coeficientes <i>d<sub>0</sub>, d<sub>1</sub>,...,d<sub>k - 1</sub> </i> a partir de: <img src="imagenCuarentaUno.jpg"/><br><br>
+				Comenzando con <i>q<sub>0</sub>(x) = 1, q<sub>1</sub>(x) = x y q<sub>2</sub>(x) = x<sup>2</sup> - 1/3</i>.<br>
+				Cualquier múltiplo de los polinomios <i>q<sub>k</sub>(x)</i> es referido como <u>polinomio de Legrenge.</u><br><br>
+				Finalmente, definimos los polinomios de Legendre como: <img src="imagenCuarentaDos.jpg"/><br><br>
+				Donde se obtiene:<br>
+				<center><img src="imagenCuarentaTres.jpg"/></center><br>
+				<center>Note que <i>P<sub>n</sub>(1) = 1</i></center><br><br>
+				Otra representación es: <img src="imagenCuarentaCuatro.jpg"/>
+
+				</h4>
+				</h4>
+				</h4>
+				</h4>
+				</div> 
+				</h4>
+			
+	</p>
+		
+			<br><br><br>
+			<center><h1>Fin de Tema I.</h1></center>
+			
+		</article>
+		</div>			
+			<nav><center>
+				<ul>
+					<li><a href="index.html">Ir a Inicio</a></li>
+					<li><a href="tema2.html">Ir a Tema 2: Análisis en frecuencia de señales continuas periódicas</a></li>
+				</ul></center>
+			</nav>
+		
+		
+
+	<script src="js/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	
+</body>
+</html>

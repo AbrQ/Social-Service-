@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Señales continuas periódicas</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">  
+
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+
+	<link rel="stylesheet" href="tas.css">	
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h2>II. Análisis en frecuencia de señales continuas periódicas</h2>
+		</div>
+	</header>
+
+	<center>
+			<nav>
+				<ul>
+					<li><a href="index.html">PÁGINA PRINCIPAL</a></li>
+					<li><a href="contenido.html">BIBLIOGRAFÍA SUGERIDA</a></li>
+					<li><a href="contenidoCurso.html">CONTENIDO DEL CURSO</a></li>
+					<li><a href="ejercicios.html">EJERCICIOS</a></li>
+				</ul>
+			</nav>
+			</center>
+
+	<div class="container">
+		<section class="main row">
+		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+				<h2>Contenido</h2>
+				1. Integral de convolución<br>
+				2. La serie trigonométrica de Fourier<br>
+				3. La serie exponencial de Fourier
+			</p>
+		</article>
+	</section>
+</div>
+	
+	<div class ="cuerpo">
+		<article class = "col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+			<br><br><font color="red"><h2>La integral de superposición para sistemas lineales estáticos.</h2></font><br><br>
+			<h4>
+				La integral de superposición puede emplearse para obtener la salida <i>y(t)</i> de un sistema lineal estático como respuesta a una entrada <i>x(t)</i>.<br><br>
+				Si la entrada es un impulso unitario <i>&delta;(t)</i>, aplicado en <i>t = 0 ,  h(t)</i> es la respuesta del sistema al impulso unitario.<br><br>
+				Una derivación matemática de la integral de superposición es la siguiente:<br>
+				Primero representamos la señal de entrada en términos de un impulso unitario que se desplaza en el tiempo.<br><br>
+				La salida del sistema en términos del operador <i>H</i> sería<br><br>
+				Asumiendo que el orden de integración y operación del sistema se pueden intercambiar tenemos:<br>
+				<center><img src="imagenCuarentaCinco.jpg"/></center><br><br>
+				Donde: <i>H[&delta; (t - &tau;)]</i> es la respuesta del sistema al impulso aplicado en <i>t = &tau;</i>.<br><br><br><br><br>
+			</h4>
+			<center><font color="red"><h2>1. La integral de convolución.</h2></font></center><br><br>
+			<h4>
+				La convolución de dos señales <i>x(t)</i> y <i>h(t)</i> es una nueva función de tiempo <i>y(t)</i>: <br><br>
+				<i>y(t) = h(t) * x(t) = x(t) * h(t)</i><br><br><br>
+			</h4>
+			<u><h2>Propiedades</h2></u><br><br>
+			<h4>
+				<i>1. h(t)*x(t) = x(t)*h(t)</i><br><br>
+				<i>2. h(t)*[ax(t)] = a[h(t)*x(t)]</i> donde <i>a</i> es una constante <br><br>
+				<i>3. h(t)*[x<sub>1</sub>(t) + x<sub>2</sub>(t)] = h(t)*x<sub>1</sub>(t) + h(t)*x<sub>2</sub>(t)</i><br><br>
+				<i>4. h(t)*[x<sub>1</sub>(t)*x<sub>2</sub>(t)] = [h(t)*x<sub>1</sub>(t)]*x<sub>2</sub>(t)</i><br><br>
+				<i>5. Si h(t) está limitada en tiempo a (a,b) y x(t) está limitada a (c, d), entonces h(t)*x(t) está limitada en tiempo a(a+c, b+d).</i><br><br>
+				<i>6. Si A<sub>1</sub> es el área bajo h(t) y A<sub>2</sub> es el área bajo x(t), entonces el área bajo h(t)*x(t) es A<sub>1</sub>A<sub>2</sub></i>.<br><br><br><br>
+				<h2><u>El integrando</u></h2><br><br>
+				<h4>
+					Se obtiene a partir de tres operaciones:<br><br>
+					1. Inversión en el tiempo para obtener <i>x(-&lambda;)</i><br><br>
+					2. Desplazamiento para obtener <i>x(t - &lambda;)</i>.<br><br>
+					3. Multiplicación de <i>h(&lambda;) y x(t - &lambda;)</i>.<br><br><br>
+					<center><img src="imagenCuarentaSeis.jpg"/></center><br><br><br><br><br>
+				</h4>
+					<center><font color="red"><h2>2. Serie Trigonométrica de Fourier (STF).</h2></font></center><br><br>
+					<h4>
+						Consideremos la siguiente serie trigonométrica: x(t) = sin &omega;<sub>0</sub>t + 1/3 sin 3&omega;<sub>0</sub>t + 1/5 sin 5&omega;<sub>0</sub>t + ... <br>cuyo período es <sup>2&pi;</sup>/<sub>&omega;<sub>0</sub></sub>.<br>
+						Sus sumas parciales son: <br>
+						<center><i>S<sub>1</sub> = sin &omega;<sub>0</sub>t</i><br>
+						<i>S<sub>2</sub> = sin &omega;<sub>0</sub>t + 1/3 sin 3&omega;<sub>0</sub>t</i>
+						</center><br><br>
+						La convergencia de la serie en un punto en particular se obtiene sustituyendo el valor apropiado de &omega;<sub>0</sub>t. Por ejemplo, para &pi;/2 :<br><br>
+						<center><i>1 - 1/3 + 1/5 + ... = &pi;/4</i></center><br><br> 
+						<center><img src="imagenCuarentaSiete.jpg"/></center><br><br>
+						Considerando lo anterior surge la siguiente cuestion: Dada una forma de onda periódica específica, <i><font color="red">¿cómo se obtiene su representación en series trigonométricas?</font></i><br>
+						La forma general de la representación de una señal periódica a través de la serie trigonométrica de Fourier es: <br><br>
+						<center><i>x(t) = a<sub>0</sub> + a<sub>1</sub>cos&omega;<sub>0</sub>t + a<sub>2</sub>cos2&omega;<sub>2</sub>t + ... + b<sub>1</sub>sin&omega;<sub>0</sub>t + b<sub>2</sub>sin2&omega;<sub>0</sub>t +...</i></center><br><br>
+						<center><img src="imagenCuarentaOcho.jpg"/></center><br><br>
+						<u>PROBLEMA:</u> Determinar <i>a<sub>0</sub>, a<sub>1</sub>, ..., b<sub>0</sub>, b<sub>1</sub>, b<sub>2</sub>,...</i><br>Integrando para un período <i>T<sub>0</sub></i>, y realizando algunas operaciones adicionales llegamos a:<br><br>
+						<center><img src="imagenCuarentaNueve.jpg"/></center><br><br>
+						¿Qué sucede con señales no periódicas?<br><br>
+						<center><img src="imagenCincuenta.jpg"/></center><br><br>
+						La cuerda de un violín que va a ser punteada por un músico tiene la forma mostrada. Si los coeficientes de la STF de la onda triangular de amplitud A son:<br><br>
+						<center><img src="imagenCincuentaUno.jpg"/></center><br><br>
+						Determina los primeros cuatro términos diferentes de cero que describan la forma inicial de la cuerda del violín en el intervalo <i>|x| &le; 9</i>.<br><br>
+						Determinar los coeficientes de la STF de la siguiente señal extendida periódicamente fuera de su intervalo.<br><br>
+						<img src="imagenCincuentaDos.jpg"/></center><br><br><br><br>
+						<center><img src="imagenCincuentaTres.jpg"/></center><br><br></center><br><br><br><br><br>
+					</h4>
+
+						<center><font color="red"><h2>3. Serie Exponencial de Fourier (SEF).</h2></font></center><br><br>
+						<h4>
+							Otra forma de representar las series de Fourier es a través de funciones exponenciales complejas a partir de las siguientes sustituciones:<br><br>
+							<img src="imagenCincuentaCuatro.jpg"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<img src="imagenCincuentaCinco.jpg"/><br><br>
+							Lo que nos da la serie exponencial compleja de Fourier:<br><br>
+							<center><img src="imagenCincuentaSeis.jpg"/></center><br><br>
+							Generalizando: <img src="imagenCincuentaSiete.jpg"/><br><br>
+							Para determinar los coeficientes de la SEF tenemos:<br><br>
+							<center><img src="imagenCincuentaOcho.jpg"/></center><br><br>
+							Donde la relación entre los coeficientes es:<br><br>
+							<center><img src="imagenCincuentaNueve.jpg"/></center><br><br>
+							Determina los coeficientes de la SEF del siguiente tren de pulsos con periodo <i>T<sub>0</sub></i>:<br><br>
+							<center><img src="imagenSesenta.jpg"/></center><br><br>
+							Determina los coeficientes de la SEF de la siguiente señal donde <i>x(t) = x(t + T<sub>0</sub>)</i><br><br>
+							<center><img src="imagenSesentaUno.jpg"/></center><br><br><br>
+						</h4>
+							<center><h2>Propiedades de simetría de la serie de Fourier.</h2></center><br>
+							<h4>
+								<center><img src="imagenSesentaDos.jpg"/></center><br>
+								<center><i>x(t) par significa que x(t) = x(-t); x(t) impar significad que x(t) = -x(-t); x(t) impar media onda simétrica significa que x(t) = -x(t &#8723; T<sub>0</sub>/2)</i></center><br><br><br>
+							</h4>
+							<center><h2>Teorema de Parseval.</h2></center><br><br>
+							<h4>
+								La potencia promedio normalizada de una forma de onda es: <img src="imagenSesentaTres.jpg"/> <br><br>
+								Expresada en términos de Fourier tenemos: <img src="imagenSesentaCuatro.jpg"/> <br><br>
+								En otras palabras sería: La potencia promedio de una señal periódica es la suma de las potencias de las componentes fasoriales de su serie de Fourier. O bien, es la suma de la potencia de su componente DC más las potencias de sus componentes armónicas.<br><br><br><br><br><br>
+								Determina la potencia promedio de <i>x(t) = 4 sen 50 &pi;t</i><br><br>
+								Considera el uso de una onda cuadrada para probar la fidelidad de un amplificador. Supóngase que el amplificador ideal permite el paso de todas las componentes de Fourier de la entrada con frecuencias menores a 51kHz. <br>
+								Supóngase también que la ganancia G<sub>0</sub> = 10 y la entrada x(t) es una onda cuadrada de 10kHz 
+								con amplitud de &#8723; 1. ¿Cuál es la potencia promedio de la señal de entrada? ¿Cuál es la potencia promedio de la señal de salida? ¿Cuál sería la potencia promedio de la señal de salida si el amplificador permitió el paso de todas las componentes de frecuencia de la entrada?<br><br><br><br><br> 
+							</h4>
+							<center><h2>Espectro de lineas.</h2></center><br><br>
+							<h4>
+								La serie exponencial de Fourier consiste de una sumatoria de fasores rotatorios, que pueden caracterizarse en el dominio de la frecuencia mediante sus espectros de amplitud y fase, donde las componentes espectrales se presentan en frecuencias positivas y negativas.<br><br>
+								<center><img src="imagenSesentaCinco.jpg"/> </center><br><br><br><br><br>
+							</h4>
+							<center><h2>Respuesta en estado estacionario de un sistema LIT a una entrada periódica.</h2></center><br><br>
+							<h4>
+								Si la entrada a un sistema LIT es una señal senoidal, su salida en estado estacionario es también una senoidal con la misma frecuencia pero diferente fase y amplitud.<br>
+								La constante compleja de proporcionalidad que multiplica a la entrada para producir la salida es la <u>función de respuesta en frecuencia</u> del sistema: <br><br>
+								<center><img src="imagenSesentaSeis.jpg"/> </center><br><br>
+								Donde <i>h(t)</i> es la respuesta al impulso del sistema. Para cualquier entrada periódica expresada en SEF, podemos expresar la salida como: <br><br>
+								<center><img src="imagenSesentaSiete.jpg"/></center><br><br>
+								Si <i>H(&omega;)</i> se representa en forma polar: <img src="imagenSesentaOcho.jpg"/><br>
+								Donde <i>A(&omega;)</i> es la respuesta en amplitud y <i>&theta;(&omega;)</i> es la respuesta a la fase del sistema, tenemos que para una entrada senoidal <i>cos &omega;<sub>0</sub>t</i>, la salida es <i>A(&omega;)cos [&omega;<sub>0</sub>t + &theta;(&omega;<sub>0</sub>)]</i>. <br><br>
+								Para cualquier entrada periódica, la salida en estado estacionario del sistema LIT esta dada por:<br><br>
+								<center><img src="imagenSesentaNueve.jpg"/></center><br><br>
+								Si un sistema LIT no produce efecto alguno en una señal de entrada salvo un posible escalamiento <i>(K)</i> y un desfase (&tau;<sub>0</sub>) en los componentes de frecuencia, tenemos un sistema <u>sin distorsión</u>. Donde <i>A(&omega;) = K</i> permanece constante para todas las componentes y <i>&theta;(&omega;) = - &tau;<sub>0</sub>&omega;</i> es una función lineal de la frecuencia. Así, la función de respuesta en frecuencia es:<br><br>
+								<center><img src="imagenSetenta.jpg"/></center><br><br>
+								Considera un sistema con respuestas en amplitud y fase como las mostradas y las siguientes entradas:<br>
+								a) x<sub>1</sub>(t) = 2 cos 10&pi;t + sen 12&pi;t<br>
+								b) x<sub>2</sub>(t) = 2 cos 10&pi;t + sen 26&pi;t<br>
+								c) x<sub>3</sub>(t) = 2 cos 26&pi;t + sen 34&pi;t<br>
+								¿Cuáles son sus salidas y que tipo de distorsión producen?<br><br>
+								<center><img src="imagenSetentaUno.jpg"/></center><br><br>
+							</h4>
+
+		</p>
+		</article>
+	</div>
+
+	<br><br><br>
+			<center><h1>Fin de Tema II.</h1></center>
+			
+		</article>
+		</div>			
+			<nav><center>
+				<ul>
+					<li><a href="index.html">Ir a Inicio</a></li>
+					<li><a href="tema3.html">Ir a Tema 3: Análisis en frecuencia de señales continuas NO periódicas</a></li>
+				</ul></center>
+			</nav>
+
+	<script src="js/jquery.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body>
+</html>  

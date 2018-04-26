@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Señales continuas NO periodicas</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">  
+
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+
+	<link rel="stylesheet" href="tas.css">	
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h2>III. Análisis en frecuencia de señales continuas NO periódicas</h2>
+		</div>
+	</header>
+
+	<center>
+			<nav>
+				<ul>
+					<li><a href="index.html">PÁGINA PRINCIPAL</a></li>
+					<li><a href="contenido.html">BIBLIOGRAFÍA SUGERIDA</a></li>
+					<li><a href="contenidoCurso.html">CONTENIDO DEL CURSO</a></li>
+					<li><a href="ejercicios.html">EJERCICIOS</a></li>
+				</ul>
+			</nav>
+			</center>
+
+	<div class="container">
+		<section class="main row">
+		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+				<h2>Contenido</h2>
+				1. La transformada de Fourier<br>
+				2. Propiedades de la transformada de Fourier<br>
+				3. La función de transferencia de un sistema lineal continuo
+			</p>
+		</article>
+	</section>
+</div>
+
+<div class ="cuerpo">
+		<article class = "col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+			<br><br><center><font color="red"><h2>1. La Transformada de Fourier.</h2></font></center><br><br>
+			<h4>
+				Las ecuaciones de la SEF son: <br>
+				<center><img src="imagenSetentaDos.jpg"/></center><br><br>
+				Las cuales, estableciendo ciertos límites y efectuando algunas operaciones matemáticas tenemos:<br>
+				<center><img src="imagenSetentaTres.jpg"/></center><br><br>
+				Estas ecuaciones definen al par de <u>transformadas de Fourier</u> para <i>x(t)</i><br><br>
+				<center><img src="imagenSetentaCuatro.jpg"/></center><br><br>
+				Algunas propiedades de simetría del par de TF se pueden obtener representando: <img src="imagenSetentaCinco.jpg"/><br><br>
+				Por ejemplo: <br><br>
+				Si <i>x(t)</i> es real: <img src="imagenSetentaSeis.jpg"/><br>
+				La parte real de <i>X(f)</i> es <u>par</u> y la parte imaginaria es <u>impar</u>.<br><br>
+				Si <i>x(t)</i> es par, <i>X(f)</i> es real y par.<br>
+				Si <i>x(t)</i> es impar, <i>X(f)</i> es imaginaria e impar.<br><br><br><br>
+				Demostrar que la TF de <i>x(t) = &pi;(t/2)</i> es real y par.<br>
+				Y demostrar que la TF de <i>x(t) = &pi;(t + <sup>1</sup>/<sub>2</sub>) - &pi;(t - <sup>1</sup>/<sub>2</sub>)</i> es imaginaria e impar.<br><br><br><br><br>
+			</h4>
+				<h2>Espectro de densidad de energía.</h2><br>
+				<h4>
+					La energía de una señal puede expresarse en el dominio de la frecuencia.<br><br><center><img src="imagenSetentaSiete.jpg"/></center><br><br>
+					Entonces, definimos la densidad espectral de energía como: <img src="imagenSetentaOcho.jpg"/><br><br><br>
+					Determinar la energía en el espacio de frecuencias de la señal: <i>x(t) = e<sup>-at</sup> u(t)</i> con <i>a > 0</i>
+				</h4><br><br><br><br>
+				<center><font color="red"><h2>2. Propiedades de la transformada de Fourier.</h2></font></center><br><br>
+				<center><img src="imagenSetentaNueve.jpg"/></center><br><br>
+				<h2>Linealidad o superposición.</h2><br><br>
+				<h4>
+					<i>a<sub>1</sub>x<sub>1</sub>(t) + a<sub>2</sub>x<sub>2</sub>(t) <---> a<sub>1</sub>X<sub>1</sub>(f) + a<sub>2</sub>X<sub>2</sub>(f)</i><br><br>
+					Determinar la TF de <i>x(t) = <sup>1</sup>/<sub>2</sub>[x<sub>a</sub>(t) - x<sub>b</sub>(t)]</i> donde: <br><center><img src="imagenOchenta.jpg"/></center><br><br><br>
+				</h4>
+				<h2>Traslación en el tiempo.</h2><br><br>
+				<h4>
+					<i>x(t - t<sub>0</sub>) <---> X(f)e<sup>-j2&pi;ft<sub>0</sub></sup></i><br><br>
+					Determinar la TF de <img src="imagenOchentaUno.jpg"/><br><br>
+				</h4>
+				<h2>Cambio de escala e inversión en el tiempo.</h2><br><br>
+				<center><img src="imagenOchentaDos.jpg"/></center><br><br>
+				Sea <img src="imagenOchentaTres.jpg"/> <h4>determinar la TF de <i>x(at)</i> con <i>a = 2/&tau;</i></h4><br><br><br>
+				<h2>Teorema de dualidad.</h2><br><br>
+				<h4>
+					<center><i>X(t) <---> x(-f)</i></center><br><br>
+					Obtener el dual del siguiente par: <i>x(t) = &pi;(<sup>t</sup>/<sub>&tau;</sub>) <---> &tau; sinc&tau;f = X(f)</i><br><br><br>
+				</h4>
+				<h2>Traslación en frecuencia y modulación.</h2><br><br>
+				<h4>
+					<center><img src="imagenOchentaCuatro.jpg"/></center><br><br>
+					Obtener las TF de: <br><br>
+					<i>x(t) = &pi;(<sup> t</sup>/<sub>2</sub>) e<sup>&#8723;j20&pi;t</sup></i><br>
+					<i>y(t) = &pi;(<sup> t</sup>/<sub>2</sub>)cos20&pi;t</i><br><br><br>
+				</h4>
+				<h2>Diferenciación e integración</h2><br><br>
+				<h4>
+					<center><img src="imagenOchentaCinco.jpg"/></center><br><br>
+					Obtener las TF de una señal trapezoidal y del escalón unitario.<br>
+					<center><img src="imagenOchentaSeis.jpg"/></center><br><br><br>
+				</h4>
+				<h2>Convolución.</h2><br><br>
+				<h4>
+					<center><img src="imagenOchentaSiete.jpg"/></center><br><br>
+					Obtener las TF de una señal triangular, la cual se forma por la convolución de dos pulsos. <br><br>
+					<center><img src="imagenOchentaOcho.jpg"/></center><br><br>
+					Obtener la TF de la transformada de Hilbert definida como: <img src="imagenOchentaNueve.jpg"/><br><br><br>
+				</h4>
+				<h2>Multiplicación</h2><br><br>
+				<h4>
+					<center><img src="imagenNoventa.jpg"/></center><br><br>
+					Obtener las TF de una señal pulso cosenoidal definido como: <img src="imagenNoventaUno.jpg"/> <br><br><br>
+				</h4>
+				<h2>Algunos pares de Transformadas de Fourier.</h2> <br><br>
+				<h4>
+					<center><img src="imagenNoventaDos.jpg"/></center><br>
+					<center><img src="imagenNoventaTres.jpg"/></center><br><br><br><br>
+				</h4>
+				<center><font color="red"><h2>3. La Función de transferencia en un sistema lineal continuo.</h2></font></center><br><br>
+				<h4>
+					La aplicación del teorema de convolución de la TF a la integral de superposición nos da como resultado <br>	<br>
+					<center><img src="imagenNoventaCuatro.jpg"/></center><br><br>
+					Esta ecuación corresponde a la función de transferencia del sistema y es idéntica a la función de respuesta en frecuencia <i>H(&omega;) con &omega; = 2&pi;f</i>.<br>
+					<i>H(f) y h(t)</i> son caracterizaciones del sistema con las cuales se puede determinar la salida en términos de una u otra.<br>
+					<center><img src="imagenNoventaCinco.jpg"/></center><br><br>
+					La salida del sistema, aplicando la TF inversa, queda definida como:<br><br>
+					<center><img src="imagenNoventaSeis.jpg"/></center><br><br>
+					Donde <i>H(f)</i>, al ser compleja, se escribe como <img src="imagenNoventaSiete.jpg"/><br><br>
+					Donde <i>|H(f)|</i> es la <u>función de respuesta en amplitud</u>, y es la <i>función de respuesta fase</i>.<br><br>
+					Finalmente, si <i>h(t)</i> es real, entonces: <br><br>
+					<center><img src="imagenNoventaOcho.jpg"/></center><br><br>
+					Determina la función de transferencia <i>H(f)</i> del circuito mostrado, y su respuesta a la entrada<br><br>
+					<center><img src="imagenNoventaNueve.jpg"/></center><br><br>
+					Como la densidad espectral de energía de la señal es proporcional a la magnitud de su TF tenemos<br><br>
+					<center><img src="imagenCien.jpg"/></center><br><br>
+					Donde <i>G<sub>x</sub>(f)</i> y <i>G<sub>y</sub>(f)</i> son densidades espectrales de energía de las entradas y salidas del sistema respectivamente.<br><br><br><br>
+				</h4>
+				<h2>
+					Respuesta de sistemas LIT a entradas senoidales.<br><br>
+				</h2>
+				<h4>
+					Una señal periódica se representa como: <img src="imagenCienUno.jpg"/><br><br>
+					Empleando la TF tenemos: <img src="imagenCienDos.jpg"/><br><br>
+					Tenemos entonces que: <img src="imagenCienTres.jpg"/><br><br>
+					Finalmente: <img src="imagenCienCuatro.jpg"/><br><br><br><br>
+					Determina la salida de un sistema a la entrada <i>x(t) = Acos(2&pi;f<sub>0</sub>t + &theta;<sub>0</sub>)</i> cuyas funciones de respuesta en amplitud y fase están dadas por:<br><br>
+					<center><img src="imagenCienCinco.jpg"/></center><br><br>
+				</h4>
+			</p>
+				<center><h1>Fin de Tema III.</h1></center><br>
+		</article>
+</div>
+
+	<nav><center>
+				<ul>
+					<li><a href="index.html">Ir a Inicio</a></li>
+					<li><a href="muestreo.html">Ir a: Muestreo de señales y conversión A/D</a></li>
+				</ul></center>
+			</nav>
+
+		</body>
+		</html>

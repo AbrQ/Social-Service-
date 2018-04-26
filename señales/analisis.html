@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Analisis señales discretas</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">  
+
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+	<link rel="stylesheet" href="tas.css">	
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h2>Análisis de señales discretas en el dominio de la frecuencia</h2>
+		</div>
+	</header>
+
+	<center>
+			<nav>
+				<ul>
+					<li><a href="index.html">PÁGINA PRINCIPAL</a></li>
+					<li><a href="contenido.html">BIBLIOGRAFÍA SUGERIDA</a></li>
+					<li><a href="contenidoCurso.html">CONTENIDO DEL CURSO</a></li>
+					<li><a href="ejercicios.html">EJERCICIOS</a></li>
+				</ul>
+			</nav>
+			</center>
+
+	<div class="container">
+		<section class="main row">
+		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+				<h2>Contenido</h2>
+				0. Introducción<br>
+				1. La transformada discreta de Fourier<br>
+				2. La transformada rápida de Fourier
+			</p>
+		</article>
+	</section>
+</div>
+
+<div class ="cuerpo">
+		<article class = "col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+			<br><br><center><font color="red"><h1>0. Introducción.</h1></font></center><br><br>
+			<h2>Representación de señales periódicas (SDF)</h2><br><br>
+			<h4>
+				Sea x (n) una señal periódica de periodo N, tal que x(n) = x(n + N) para toda n. Esta señal se puede representar mediante un desarrollo de series de Fourier:<br><br>
+				<center><img src="imagenCienDiecinueve.jpg"/></center><br><br>
+				donde k es un entero y {c<sub>k</sub>} son los coeficientes de la representación. A causa de la periodicidad tenemos<br><br>
+				<center><img src="imagenCienVeinte.jpg"/></center><br><br>
+				Solo bastan N exponenciales complejas periódicas para la representación de x(n) en series de Fourier.<br><br>
+				Empleando propiedades de ortogonalidad y manipulación matemática podemos obtener los coeficientes de la serie de Fourier a partir de x(n):<br><br>
+				<center><img src="imagenCienVeinteUno.jpg"/></center><br><br>
+				Donde la secuencia c<sub>k</sub> es periódica con periodo N, esto es, c<sub>k</sub> = c<sub>k+N</sub> .<br>
+				Entonces, <u>el espectro de una señal x(n) periódica con periodo N, es también una secuencia periódica de periodo N.</u><br><br><br>
+				Determinar el espectro de:<br>
+				<center><img src="imagenCienVeinteDos.jpg"/></center><br><br><br>
+			</h4>
+			<h2>Propiedades del desarrollo en SFD.</h2><br><br>
+			<h4>
+				<u>Linealidad.</u><br><br>
+				Dadas dos señales periódicas x<sub>1</sub>(n) y x<sub>2</sub>(n), ambas con periodo N, tales que<br><br><br>
+				<center><img src="imagenCienVeinteTres.jpg"/></center><br><br>
+				Entonces<br><br><br>
+				<center><img src="imagenCienVeinteCuatro.jpg"/></center><br><br>
+				<u>Desplazamiento de una señal.</u><br><br>
+				Si una señal periódica x(n), tiene como coeficientes de Fourier c<sub>k</sub> , entonces x(n - m) es una versión desplazada de x(n) y<br><br><br>
+				<center><img src="imagenCienVeinteCinco.jpg"/></center><br><br>
+				<u>Convolución periódica.</u><br><br>
+				Sean x<sub>1</sub>(n) y x<sub>2</sub>(n) dos secuencias periódicas, ambas con periodo N, y cuyos coeficientes de su desarrollo en serie de Fourier son c<sub>1k</sub> y c<sub>2k</sub> respectivamente. Si tenemos<br><br>
+				<center><img src="imagenCienVeinteSeis.jpg"/></center><br><br>
+				<u>Dualidad.</u><br><br>
+				<center><img src="imagenCienVeinteOcho.jpg"/></center><br><br>
+			</h4>
+			<h2>Transformada de Fourier de señales aperiódicas en tiempo discreto.</h2><br><br>
+			<h4>
+				La TF de una señal de energía finita x(n) (aperiódica) en el tiempo discreto se define como<br><br>
+				<center><img src="imagenCienVeinteSiete.jpg"/></center><br><br>
+				X(ω) es una descomposición de x(n) en sus componentes de frecuencia. Donde, <u>X(ω) es periódica</u> con periodo 2π, esto es<br><br>
+				<center>X(ω + 2&pi;k) = X(ω)</center><br><br>
+				Finalmente, la transformada inversa es:<br><br>
+				<center><img src="imagenCienVeinteNueve.jpg"/></center><br><br><br>
+			</h4>
+			<h2>La suma de convolución</h2><br><br>
+			<h4>
+				Sea h(n, k) la respuesta del sistema a un impulso unitario en el instante n = k, para -∞ < k < ∞. Esto es:<br><br>
+				y(n, k) ≡ h(n, k) = T[δ(n - k)]<br><br>
+				Si escalamos el impulso a la entrada por c<sub>k</sub> ≡ x(k), esto es<br><br>
+				c<sub>k</sub> h(n, k) = x(k) h(n, k)<br><br>
+				Y si x(n) se expresa como:<br><br>
+				<center><img src="imagenCienTreinta.jpg"/></center><br><br>
+				Tenemos finalmente que la respuesta del sistema a x(n) es<br><br>
+				<center><img src="imagenCienTreintaUno.jpg"/></center><br><br>
+				Si la respuesta del sistema LTI a δ(n) se denota como h(n) 
+				Esto es:<br><br>
+				<center>h(n) ≡ T[δ(n)]</center><br><br>
+				Por la propiedad de invarianza, la respuesta a δ(n - k) es<br><br>
+				<center>h(n - k) = T[δ(n - k)]</center><br><br>
+				Entonces tenemos que: <img src="imagenCienTreintaDos.jpg"/><br><br>
+				La función de respuesta del sistema LTI se conoce como <u>suma de convolución</u>.<br><br>
+				La entrada x(n) es “convolucionada” por la respuesta al impulso h(n) para producir la salida y(n).<br><br><br><br>
+			</h4>
+			<h2>
+				Análisis de la suma de convolución.
+			</h2><br><br>
+			<h4>
+				Deseamos calcular la salida del sistema para n = n0, entonces:<br><br>
+				<center><img src="imagenCienTreintaTres.jpg"/></center><br><br>
+				Observaciones:<br><br>
+				 x(k) y h(n<sub>0</sub>-k) son funciones del índice k.<br><br>
+				 x(k) y h(n<sub>0</sub>-k) se multiplican entre si para producir una secuencia de productos.<br><br>
+				 y(n<sub>0</sub>) es la suma de los productos.<br><br>
+				 h(n<sub>0</sub>-k) se obtiene de h(k), reflejándola alrededor de k = 0, produciendo h(-k), y luego desplazando en n<sub>0</sub>.<br><br>
+			</h4><br><br>
+			<h2>La suma de convolución involucra cuatro pasos:</h2><br><br>
+			<h4>
+				1. <u>Reflejo</u>. Se refleja h(k) alrededor de k = 0 para tener h(-k).<br><br>
+				2. <u>Desplazamiento</u>. Se desplaza h(-k) en n<sub>0</sub> a la derecha (izquierda) si n<sub>0</sub> es positivo (negativo) para obtener h(n<sub>0</sub> - k).<br><br>
+				3. <u>Multiplicación</u>. Se multiplica x(k) por h(n<sub>0</sub>-k) para tener la secuencia de productos v<sub>n<sup>0</sup></sub>(k) ≡ x(k)h(n<sub>0</sub>-k).<br><br>
+				4. <u>Suma</u>. Se suman todos los valores de la secuencia de productos v<sub>n<sup>0</sup></sub>(k) para obtener el valor de la salida en n = n<sub>0</sub>.<br><br><br>
+				Si nos interesa evaluar la respuesta del sistema para todos los instantes de tiempo -∞ < n < ∞, repetimos los pasos del 2 al 4 para todos los posibles desplazamientos n.<br><br>
+				<center><img src="imagenCienTreintaCuatro.jpg"/></center><br><br><br><br>
+				Determina la salida y(n) de un sistema LTI con respuesta al impulso h(n) = a<sup>n</sup>u(n), |a| < 1. Cuando la entrada es la secuencia escalón unitario x(n) = u(n)<br><br>
+				<center><img src="imagenCienTreintaCinco.jpg"/></center><br><br><br><br>
+			</h4>
+			<h2>Propiedades de la convolución.</h2><br><br>
+			<h4>
+				<center><img src="imagenCienTreintaSeis.jpg"/></center><br><br><br><br>
+				Determina la respuesta al impulso de la cascada de dos sistemas LTI con respuestas al impulso h<sub>1</sub>(n) = ½<sup>n</sup>u(n) y h<sub>2</sub>(n) = ¼<sup>n</sup>u(n)<br><br>
+				 <center><img src="imagenCienTreintaSiete.jpg"/></center><br><br><br><br>
+			</h4>
+			<h2>Distributiva</h2><br><br>
+			<h4>
+				x(n)*[h<sub>1</sub>(n)+h<sub>2</sub>(n)] = x(n)*h<sub>1</sub>(n)+x(n)*h<sub>2</sub>(n)<br><br>
+				<center><img src="imagenCienTreintaOcho.jpg"/></center><br><br><br><br>
+			</h4>
+			<br><br><center><font color="red"><h1>1. La transformada discreta de Fourier.</h1></font></center><br><br>
+			<h2>
+				Muestreo en el dominio de la frecuencia y reconstruccion<br>
+				de señales en tiempo discreto.
+			</h2><br><br>
+			<h4>
+				Consideremos una señal aperiódica en tiempo discreto x(n), con transformada de Fourier<br>br>
+				<center><img src="imagenCienTreintaNueve.jpg"/></center><br><br>
+				Ahora, muestreamos X(ω) periódicamente a una tasa de δω = 2π/N radianes. Si ω= 2πk/N entonces cada muestra de X(ω) es<br><br>
+				<center><img src="imagenCienCuarenta.jpg"/></center><br><br>
+				k = 0,1,...,N-1<br><br>
+				<center><img src="imagenCienCuarentaUno.jpg"/></center><br><br>
+				Reacomodando, tenemos que cada muestra es:<br><br>
+				<center><img src="imagenCienCuarentaDos.jpg"/></center><br><br>
+				Para k = 0,1,...,N-1<br><br>
+				La señal<br><br>
+				<center><img src="imagenCienCuarentaTres.jpg"/></center><br><br>
+				obtenida repitiendo x(n) cada N muestras, es periódica con periodo fundamental N, y puede desarrollarse en serie de Fourier como
+				<center><img src="imagenCienCuarentaCuatro.jpg"/></center><br><br>
+				Cuyos coeficientes de Fourier son:<br><br>
+				<center><img src="imagenCienCuarentaCinco.jpg"/></center><br><br>
+				Entonces tenemos que<br><br>
+				<center><img src="imagenCienCuarentaSeis.jpg"/></center><br><br>
+				Por lo tanto la señal periódica x<sub>p</sub>(n) puede obtenerse a partir de las muestras de X(ω)<br><br>
+				<center><img src="imagenCienCuarentaSiete.jpg"/></center><br><br>
+				x(n) puede recuperarse a partir de x<sub>p</sub>(n) si no existe aliasing en el dominio del tiempo, es decir, si x(n) no está limitada en tiempo a una duración menor que el periodo N de x<sub>p</sub>(n).<br><br>
+				<center><img src="imagenCienCuarentaOcho.jpg"/></center><br><br>
+				Dado que x(n) = x<sub>p</sub>(n) para 0 ≤ n ≤ N – 1 tenemos que la señal original x(n) obtenida de las muestras de X(ω) es<br><br>
+				<center><img src="imagenCienCuarentaNueve.jpg"/></center><br><br>
+				La transformada de Fourier obtenida a partir de sus muestras estará dada por<br><br>
+				<center><img src="imagenCienCincuenta.jpg"/></center><br><br>
+				Donde no se presente aliasing.<br><br>
+				P(ω) tiene la propiedad<br><br>
+				<center><img src="imagenCienCincuentaUno.jpg"/></center><br><br>
+				En consecuencia, obtendremos exactamente los valores de las muestras X(2πk/N) para ω = 2πk/N. <br><br><br>
+				Consideremos la señal x(n) = a<sup>n</sup>u(n) con 0 < a < 1. Su espectro se muestrea a ω<sub>k</sub> = 2πk/N con k = 0, 1, …, N-1. Determinar el espectro reconstruido para a = 0.8 cuando N = 5 y N = 50<br><br>
+				<center><img src="imagenCienCincuentaDos.jpg"/></center><br><br><br>
+			</h4>
+				<center><font color="red"><h1>La transformada de Fourier discreta (DFT).</h1></font></center><br><br><br>
+				<h4>
+					Recordemos que una señal periódica es: <img src="imagenCienCincuentaTres.png"/> <br><br>
+					Considerando solo las L muestras de esta señal tenemos <img src="imagenCienCincuentaCuatro.png"/> <br><br>
+					Cuando se muestrea X(ω) a una tasa de 2πk/N podemos decir que <img src="imagenCienCincuentaCinco.png"/> <br><br>
+					Finalmente, las fórmulas de la DFT e IDFT de x(n) son: <br><br>
+					<center><img src="imagenCienCincuentaSeis.png"/> </center> <br><br>
+				</h4>
+				<h2>La DFT como una transformación lineal</h2><br><br><br>
+				<h4>
+					Las fórmulas para la DFT e IDFT de x(n) se pueden expresar como: <br><br>
+					<center><img src="imagenCienCincuentaSiete.png"/> </center> <br><br>
+					Si definimos las señales como vectores: <br><br>
+					<center><img src="imagenCienCincuentaOcho.png"/> </center> <br><br>
+					Podemos expresar de forma matricial la DFT: X<sub>N</sub> = W<sub>N</sub>X<sub>N</sub> <br>
+					Donde W<sub>N</sub> es la matriz de transformación lineal. <br><br><br>
+					La IDFT se expresa como:
+					<br><br>
+					<center><img src="imagenCienCincuentaNueve.png"/> </center> <br><br><br>
+					Calcula la DFT de la secuencia de cuatro puntos x(n) = {0 1 2 3}<br><br><br>
+
+				</h4>
+				<h2>Propiedades de la DFT</h2><br><br>
+				<h4>
+					La DFT es un conjunto de N muestras {X(k)} de la TF X(ω) de una señal finita {x(n)} de longitud L ≤ N.
+					El muestreo de X(ω) se presenta en N frecuencias igualmente espaciadas ω<sub>k</sub> = 2πk/N, k = 0, 1, 2, .., N-1.
+					Las N muestras {X(k)} representan a la secuencia {x(n)} en el dominio de la frecuencia.
+					Las DFT e IDFT de una secuencia {x(n)} de N puntos son: <br><br>
+					<center><img src="imagenCienSesenta.png"/> </center> <br><br><br>
+				</h4>
+				<h2>Periodicidad</h2><br><br>
+				<h4>
+					Si x(n) y X(k) son un par de la DFT de N puntos, entonces <br><br>
+					<center><i>x(n + N) = x(n) para toda n <br>
+					X(k + N) = X(k) para toda k</i></center><br><br><br>
+
+				</h4>
+				<h2>Linealidad</h2> <br><br>
+				<h4>
+					<center><img src="imagenCienSesentaUno.png"/> </center> <br><br><br>
+				</h4>
+				<h2>Simetría circular de una secuencia.</h2><br><br>
+				<h4>
+					La DFT de N puntos de la señal x(n) con longitud L ≤ N equivale a la DFT de N puntos de la secuencia periódica x<sub>p</sub>(n) de periódo N, la cual se obtiene extendiendo x(n) periódicamente así <br><br>
+					<center><img src="imagenCienSesentaDos.png"/> </center> <br><br><br>
+					En general, el desplazamiento circular de una secuencia se puede representar como el índice de módulo N. <br><br>
+					<center><img src="imagenCienSesentaTres.png"/> </center> <br><br>
+					Ejemplo, con k = 2 y N = 4, tenemos: <i>x'(n) = x((n-2))<sub>4</sub></i> <br><br>
+					Lo cual implica que: <br><br>
+					<center><img src="imagenCienSesentaCuatro.png"/> </center> <br><br>
+					x’(n) es x(n) desplazada circularmente dos unidades de tiempo en el sentido opuesto a las manecillas del reloj. <br><br><br>
+					<center><img src="imagenCienSesentaCinco.png"/> </center> <br><br>
+					Una secuencia de N puntos es circularmente <i>par</i> si es simétrica respecto al punto cero en el círculo. Esto implica que : <i>x(N - n) = x(n); 1 &le; n &le; N - 1</i> <br><br>
+					Una secuencia de N puntos es circularmente <i>impar</i> si es antisimétrica respecto al punto cero en el círculo. Esto implica que : <i>x(N - n) = - x(n); 1 &le; n &le; N - 1</i> <br><br>
+					El <i>tiempo inverso</i> de una secuencia de N puntos se obtiene invirtiendo sus muestras alrededor del punto cero en el círculo. Así, la secuencia x((-n))<i>N</i> esta dada por: <i>x((- n)) = x(N - n); 1 &le; n &le; N - 1</i> <br><br>
+					que equivale a dibujar x(n) en el sentido de las manecillas del reloj en un círculo.
+				</h4><br><br><br>
+				<h2>Propiedades de simetría de la DFT.</h2><br><br>
+				<h4>
+				Asumimos que la secuencia de N puntos x(n) y su DFT son complejas, pudiéndose expresar como: <br><br>
+				<center><img src="imagenCienSesentaSeis.png"/> </center> <br><br>
+				Sustituyendo en la expresión de la DFT: <br><br>
+				<center><img src="imagenCienSesentaSiete.png"/> </center> <br><br>
+				De manera similar, para la IDFT tenemos: <br><br>
+				<center><img src="imagenCienSesentaOcho.png"/> </center> <br><br><br>
+			</h4>
+			<h2>Secuencias reales.</h2> <br><br>
+			<h4>
+				Si x(n) es real, tenemos que: <i>X(N - k) = X<sup>*</sup>(k) = X(- k)</i> <br><br>
+				En consecuencia: <img src="imagenCienSesentaNueve.png"/>
+				<br><br><br>
+			</h4>
+			<h2>Secuencias reales y pares.</h2><br><br>
+			<h4>
+				Si x(n) es real y par, esto es: <i>x(n) = x(N - n); 0 &le; n &le; N - 1</i> <br><br>
+				Entonces X<sub>1</sub>(k) = 0 y la DFT se reduce a: <br><br>
+				<center><img src="imagenCienSetenta.png"/></center>
+				<br><br><br>
+			</h4>
+			<h2>Secuencias reales e impares.</h2><br><br>
+			<h4>
+				Si x(n) es real e impar, esto es: <i>x(n) = - x(N - n); 0 &le; n &le; N - 1</i> <br><br>
+				Entonces X<sub>R</sub>(k) = 0 y la DFT se reduce a: <br><br>
+				<center><img src="imagenCienSetentaUno.png"/></center> <br><br><br>
+			</h4>
+			<h2>Secuencias puramente imaginarias.</h2> <br><br>
+			<h4>
+				En este caso x(n) = jx<sub>1</sub>(n) y en consecuencia: <br><br>
+				<center><img src="imagenCienSetentaDos.png"/></center> <br>
+				donde X<sub>R</sub>(k) es impar y X<sub>I</sub>(k) es par. <br><br>
+				Si x<sub>I</sub>(n) es impar, X<sub>I</sub>(k) = 0 y por lo tanto X(k) es puramente real.  <br><br>
+				Si x<sub>I</sub>(n) es par, X<sub>R</sub>(k) = 0 y por lo tanto X(k) es puramente imaginaria. <br><br>
+				En resumen: <br><br>
+				<center><img src="imagenCienSetentaTres.png"/></center> <br> <br><br><br>
+			</h4>
+			<h2>Multiplicación de DFTs y convolución circular.</h2><br><br>
+			<h4>
+				Tenemos dos señales de longitud N, x<sub>1</sub>(n) y x<sub>2</sub>(n)  con sus respectivas DFT de <i>N</i> puntos. <br><br>
+				<center><img src="imagenCienSetentaCuatro.png"/></center> <br> <br>
+				Si las multiplicamos tenemos: X<sub>3</sub>(k) = X<sub>1</sub>(k)X<sub>2</sub>(k) ; <i>k = 0,1,2,...,N-1</i> <br><br>
+				que corresponde a una secuencia <i>x<sub>3</sub>(n)</i> de longitud <i>N</i>. <br><br>
+				La IDTF {X<sub>3</sub>(n)} es: <br><br>
+				<center><img src="imagenCienSetentaCinco.png"/></center> <br> <br>
+				Sustituyendo, manipulando matemáticamente y aplicando convergencias geométricas llegamos a: <br><br>
+				<center><img src="imagenCienSetentaSeis.png"/></center> <br> <br>
+				que tiene la forma de una suma de convolución la cual involucra al índice <i>((m-n))<sub>N</sub></i> y es denominada <i>convolución circular</i>. <br><br>
+				Realiza la convolución circular de las siguientes dos secuencias: <br><br>
+				<center>x<sub>1</sub>(n) = {2,1,2,1}</center> <br>
+				<center>x<sub>2</sub>(n) = {1,2,3,4}</center> <br><br>
+				<center><img src="imagenCienSetentaSiete.png"/></center> <br> <br>
+				Realiza la convolución de las siguientes dos secuencias a partir de la DFT e IDFT <br><br>
+				
+				x<sub>1</sub>(n) = {2,1,2,1}; x<sub>2</sub>(n) = {1,2,3,4} <br><br>
+				x<sub>1</sub>(n) = {1,1,1,1,0,0,0,0}; x<sub>2</sub>(n) = sin (<sup>3&pi;</sup>/<sub>8</sub>) n ; donde 0 &le; n &le; 7<br><br><br><br>
+			</h4>
+			<h2>Convolución circular.</h2> <br><br>
+			<h4>
+				<center><img src="imagenCienSetentaOcho.png"/></center> <br> <br>
+			</h4>
+			<center><font color="red"><h1>Propiedades adicionales.</h1></font></center><br><br>
+			<h2>Tiempo inverso de una secuencia.</h2> <br><br>
+			<h4>
+				<center><img src="imagenCienSetentaNueve.png"/></center> <br> <br>
+				Por lo tanto, invertir la secuencia de N puntos en el tiempo equivale a invertir los valores de la DFT. <br><br>
+				<center><img src="imagenCienOchenta.png"/></center> <br> <br>
+			</h4>
+			<h2>Desplazamiento circular en tiempo de una secuencia.</h2> <br><br>
+			<h4>
+				<center><img src="imagenCienOchentaUno.png"/></center> <br> <br>
+			</h4>
+			<h2>Desplazamiento circular en frecuencia.</h2> <br><br>
+			<h4>
+				<center><img src="imagenCienOchentaDos.png"/></center> <br> <br>
+			</h4>
+			<h2>Propiedades del conjugado complejo.</h2> <br><br>
+			<h4>
+				<center><img src="imagenCienOchentaTres.png"/></center> <br> <br>
+			</h4>
+			<h2>Correlación circular.</h2> <br><br>
+			<h4>
+				En general, para las secuencias complejas x(n) y y(n), si <br><br>
+				<center><img src="imagenCienOchentaCuatro.png"/></center> <br> <br>
+				donde r<sub>xy</sub>(l) es la secuencia de correlación cruzada (no normalizada) definida como: <br><br>
+				<center><img src="imagenCienOchentaCinco.png"/></center> <br> <br> <br>
+			</h4>
+			<h2>Multiplicación de dos secuencias.</h2> <br><br>
+			<h4>
+				<center><img src="imagenCienOchentaSeis.png"/></center> <br> <br> 
+			</h4>
+			<h2>Teorema de Parseval.</h2> <br><br>
+			<h4>
+				En general, para las secuencias complejas x(n) y y(n), si: <br><br>
+				<center><img src="imagenCienOchentaSiete.png"/></center> <br> <br> 
+			</h4>
+			<center><font color="red"><h1>Métodos de filtrado lineal basados en la DFT..</h1></font></center><br><br>
+			<h2>Uso de la DFT en filtrado lineal.</h2> <br><br>
+			<h4>
+				Supogamos que tenemos una secuencia <i>x(n)</i> de longitud <i>L</i>, que excita un filtro FIR de longitud <i>M</i>. Sea <br><br>
+				<center><i>x(n) = 0; n < 0 y n >= L</i></center> <br>
+				<center><i>h(n) = 0; n < 0 y n >= M</i></center> <br>
+				Donde <i>h(n) es la respuesta al impulso.</i> <br><br>
+				La salida <i>y(n)</i> puede expresarse como: <br><br>
+				<center><img src="imagenCienOchentaOcho.png"/></center> <br> <br>   
+				cuya duración es <i>L + M -1</i>. <br><br>
+				El equivalente en el dominio de la frecuencia es: <i>Y(&omega;) = X(&omega;)H(&omega;)</i> <br><br>
+				Si <i>y(n)</i> se representa través de <i>Y(ω)</i> en un conjunto de frecuencias discretas, el número de éstas debe ser mayor o igual a <i>L + M - 1</i>. Entonces, necesitamos una DFT de tamaño <i>N ≥ L + M - 1</i>, para representar <i>{y(n)}</i> en el dominio de la frecuencia. Ahora, si: <br><br>
+				<center><img src="imagenCienOchentaNueve.png"/></center> <br> <br>
+				Donde <i>{X(k)} y {H(k)}</i> son las DFTs de <i>N</i> muestras de <i>x(n) y h(n)</i>, respectivamente. <br><br>
+				Como <i>x(n) y h(n)</i> son menores a <i>N</i>, se rellenan estas secuencias con ceros hasta alcanzar una longitud <i>N</i>. <br><br><br>
+				* Usando TDF y TDFI determinar la respuesta del filtro FIR con respuesta al impulso h(n) = {1, 2, 3} a la secuencia de entrada x(n) = {1, 2, 1, 2} para 8 puntos. <br><br><br>
+				* Determinar la secuencia de salida y(n) resultante de usar cuatro puntos de la TDF del ejemplo anterior. ¿Qué se observa? <br><br><br><br><br>
+			</h4>
+			<h2>Filtrado de secuencias de larga duración.</h2> <br><br>
+			<h4>
+				La entrada se fragmenta en bloques y cada uno se procesa con la TDF y TIDF para obtener bloques de salida que se unen para conseguir la salida global. <br><br>
+				Existen dos métodos: <br><br> <center><i>
+				 - Método de solapamiento y almacenamiento <br>
+				 - Método de solapamiento y suma. </i></center> <br><br>
+
+				En ambos, suponemos al filtro FIR de longitud <i>M</i>. <br><br>
+				La entrada se fragmenta en bloques de tamaño <i>L</i>.
+				Donde <i>L >> M </i>. <br><br><br><br>
+			</h4>
+			<h2>Método de soplamiento y almacenamiento.</h2> <br><br>
+			<h4>
+				El tamaño de los bloques de entrada es <i>N = L + M – 1</i>. <br><br>
+				La longitud de cada TDF y TIDF es N. <br><br>
+				Cada bloque de datos contiene al menos <i>M -1</i> puntos del bloque de datos anterior, seguido de <i>L</i> nuevos puntos. <br><br>
+				Se calcula la TDF de <i>N</i> puntos para cada bloque. <br><br>
+				Se aumenta el tamaño del filtro de respuesta al impulso agregando L - 1 ceros. 
+				Se calcula la TDF de los <i>N</i> puntos y se almacena. <br><br>
+				La multiplicación de las dos TDF de <i>N</i> puntos, <i>{X(k)} y {H(k)}</i>, correspondiente al <i>m-ésimo</i> bloque de datos da lugar a: <br><br>
+				<center><img src="imagenCienNoventa.png"/></center> <br> <br>
+				Para evitar pérdida de datos por aliasing, se almacenan los últimos <i>M – 1</i> puntos de cada registro de datos, los cuales vienen a ser los <i>M -1</i> puntos del registro siguiente. 
+				Para empezar el procesamiento, los <i>M - 1</i> primeros se hacen iguales a cero. Por lo tanto: <br><br>
+				<center><img src="imagenCienNoventaUno.png"/></center> <br> <br>
+				Y así sucesivamente. <br><br>
+				<center><img src="imagenCienNoventaDos.png"/></center> <br> <br><br><br>
+			</h4>
+			<h2>Método de soplamiento y suma</h2> <br><br>
+			<h4>
+				El tamaño de los bloques de entrada es <i>L</i>.
+				La longitud de cada TDF y TIDF es <i>N = L + M - 1</i>.
+				A cada bloque de datos se le agregan <i>M -1</i> ceros y se calcula la TDF de <i>N</i> puntos. <br><br>
+				Por lo tanto, cada bloque puede representarse como: <br><br>
+				<center><img src="imagenCienNoventaTres.png"/></center> <br> <br>
+				y así sucesivamente. <br><br>
+				Las dos DFTs de <i>N</i> puntos se multiplican para formar: <br><br>
+				<i>Y<sub>m</sub>(k) = H<sub>m</sub>(k)X(k); k = 0,1,...,N-1</i><br><br><br>
+				La TIDF da como resultado bloques de tamaño <i>N</i> que no están afectados por el aliasing. <br><br>
+				Los últimos <i>M -1</i> puntos de cada bloque de salida deben solaparse y sumarse a los <i>M - 1</i> primeros del siguiente. <br><br>
+				La secuencia de salida es: <br><br>
+				<center><img src="imagenCienNoventaCuatro.png"/></center> <br> <br>
+				<center><img src="imagenCienNoventaCinco.png"/></center> <br> <br><br><br>
+			</h4>
+			<center><font color="red"><h1>2. La Transformada Rápida de Fourier (FFT).</h1></font></center><br><br><br>
+			<h4>
+				El problema al calcular la TDF se halla en obtener la secuencia <i>{X(k)}</i> de <i>N</i> números complejos a partir de <i>{x(n)}</i> con longitud N según: <br><br>
+				<center><img src="imagenCienNoventaSeis.png"/></center> <br> <br>
+				En general, se supone que <i>{x(n)}</i> también es compleja. <br><br>
+				De manera similar, la TIDF viene dada por: <br><br>
+				<center><img src="imagenCienNoventaSiete.png"/></center> <br> <br>
+				Tanto para la TDF, como para la TIDF se realizan el mismo tipo de operaciones. <br>
+				Para cada valor <i>k</i>, el cálculo directo de <i>X(k)</i> supone llevar a cabo <i>N</i> multiplicaciones complejas <i>(4N reales) y N - 1</i>  sumas complejas <i>(4N - 2 reales)</i>. <br><br>
+				Para calcular los <i>N</i> valores de la TDF se requieren N<sup>2</sup> multiplicaciones complejas y N<sup>2</sup> - N sumas complejas. <br><br>
+				Por eso el cálculo directo de la TDF es ineficiente y no explota las propiedades de simetría y periodicidad del factor de fase W<sub>N</sub> : <br><br>
+				<center><img src="imagenCienNoventaOcho.png"/></center> <br> <br><br><br>
+			</h4>
+			<h2>Metodología "divide y vencerás"</h2><br><br>
+			<h4>
+				Método basado en la descomposición de la TDF de <i>N</i> puntos en TDF más pequeñas, y lleva a una familia de algoritmos computacionalmente eficientes: FFT. <br><br>
+				Consideremos el cálculo de una TDF de <i>N</i> puntos donde <i>N = LM</i>. <br><br>
+				x(n) puede almacenarse en un vector con índice <i>n</i>, o en una matriz con índices <i>l (renglones) y m (columnas)</i>.<br><br>
+				Y de igual manera podemos almacenar <i>X(k)</i>.<br><br>
+				El almacenamiento matricial supone dos posibles configuraciones: <br><br><br>
+				<center><img src="imagenCienNoventaNueve.png"/></center> <br> <br><br>
+				Ponemos a <i>x(n)</i> en una matriz <i>x(l, m) y a X(k) en X(p, q)</i>. <br>
+				Así la TDF puede expresarse de la siguiente manera: <br><br>
+				<center><img src="imagenDoscientos.png"/></center> <br> <br><br>
+				El cálculo de esta TDF tiene tres pasos: <br><br>
+				1.- Calcular las TDF de <i>M</i> puntos para cada renglón <i>l = 0,1,...,L-1</i> <br><br>
+				<center><img src="imagenDoscientosUno.png"/></center> <br> <br>
+				2.- Calcular la nueva matriz <i>G(l,q)</i> definida como: <br><br>
+				<center><img src="imagenDoscientosDos.png"/></center> <br> <br>
+				3.- Calcular las TDF de L puntos para cada columna <i>q = 0,1,..., M-1</i>  de la matriz <i>G(l,q)</i>. <br><br>
+				<center><img src="imagenDoscientosTres.png"/></center> <br> <br><br><br>
+				* Calcular la TDF para N = 15 con L = 5 y M = 3. <br><br>
+				<center><img src="imagenDoscientosCuatro.png"/></center> <br> <br><br>
+				Otro algoritmo similar sería: <br><br>
+				<center><img src="imagenDoscientosCinco.png"/></center> <br> <br>
+				Resumido de la siguiente manera: <br><br>
+				1.- Almacenar la señal por renglones <br>
+				2.- Calcular la TDF de <i>L</i> puntos en cada columna <br>
+				3.- Multiplicar la matriz resultante por <i>W<sub>N</sub><sup>pm</sup></i><br>
+				4.- Calcular la TDF de <i></i> puntos de cada renglón <br>
+				5.- Leer por columnas la matriz resultante <br><br><br><br>
+			</h4>
+			<h2><center>Comparación de la complejidad computacional entre la TDF y la FFT</center></h2> <br><br>
+			<center><img src="imagenDoscientosSeis.png"/></center> <br> <br><br><br>
+			<h4>
+				Otros algoritmos: <br><br>
+				1.- Algoritmos para la FFT base 2 <br>
+				2.- Algoritmos para la FFT base 4 <br>
+				3.- Algoritmos para la FFT de base partida <br>
+				<br><br>
+			</h4>
+			<center><h2>Fin del tema.</h2></center> <br><br>
+			</p>
+	</article>
+</div>
+
+
+
+
+
+<nav><center>
+				<ul>
+					<li><a href="index.html">Ir a Inicio</a></li>
+					<li><a href="analisis.html">Ir a: Análisis de señales discretas en el dominio de la frecuencia</a></li>
+				</ul></center>
+			</nav>
+
+		</body>
+		</html>

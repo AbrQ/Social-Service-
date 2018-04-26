@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Conceptos básicos</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">  
+
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+
+	<link rel="stylesheet" href="aes.css">	
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h2>Conceptos básicos de señales y sistemas</h2>
+		</div>
+	</header>
+
+	<center>
+			<nav>
+				<ul>
+					<li><a href="index.html">PÁGINA PRINCIPAL</a></li>
+					<li><a href="contenido.html">BIBLIOGRAFÍA</a></li>
+					<li><a href="contenidoCurso.html">CONTENIDO DEL CURSO</a></li>
+					<li><a href="ejercicios.html">EJERCICIOS</a></li>
+				</ul>
+			</nav>
+			</center>
+
+	<div class="container">
+		<section class="main row">
+		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+				<h2>Contenido</h2>
+					1. Introducción <br>
+					2. Clasificación de las señales <br>
+					3. Clasificación de los sistemas <br>
+					4. Energía y potencia de las señales
+			</p>
+		</article>
+	</section>
+</div>
+
+<div class ="cuerpo">
+		<article class = "col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+			<br><br><center><font color="red"><h1>1. Introducción.</h1></font></center><br><br>
+			
+			<h4>
+					Una señal está definida como una cantidad física que varía en el tiempo, espacio, o con otra(s) variable(s) <br>
+					<center><img src="imagenUno.jpg"/></center><br>
+					<font color="red" size=5>¿Cómo se generan las señales?</font><br><br>
+					* La generación de la señal está asociada con un <u><i>sistema</i></u> que responde al estímulo<br>
+					* El estímulo en combinación con el sistema es llamado <u><i>fuente de la señal</i></u><br>
+					* Un <i><u>sistema</u></i> se puede definir como un dispositivo físico que efectúa una operación a una señal.<br>* La realización de esas operaciones son referidas como <i><u>procesamiento de la señal.</u></i><br><br>
+
+					<font color="red" size=5>Elementos básicos de un sistema PDS.</font><br><br>
+					* La mayoría de las señales son analógicas por naturaleza. <br>
+					* Estas señales son funciones de una variable continua (tiempo, espacio). <br>
+					* Pueden procesarse con sistemas analógicos (filtros o analizadores de frecuencia). <br>
+					* En estos casos la señal se ha procesado directamente en su forma analógica. <br><br>
+					<center><img src="imagenDos.jpg"/></center><br><br>
+					* El procesamiento de la señal digital nos da un método alternativo para procesar la señal analógica.<br>
+					*Se requiere de una interfaz: Convertidor A/D <br>
+					*En ciertas aplicaciones requerimos de otra interfaz: Un convertidor D/A.<br><br><br>
+					<center><img src="imagenTres.jpg"/></center><br><br>
+				</h4><br><br><br><br>
+
+				<center><font color="red"><a name="señales"><h1>2. Clasificación de las señales</h1></a></font></center>
+				<h4>
+					Los métodos a emplear en el procesamiento ó análisis de una señal depende en gran medida de sus <i><u>características</u></i><br><br>
+					* Señales multicanal y multidimensionales.<br>
+					* Señales continuas y discretas en el tiempo. <br>
+					* Señales con valores continuos y con valores discretos. <br>
+					* Señales determinísticas y aleatorias. <br>
+					* Señales pares e impares. <br>
+					* Señales periódicas y aperiódicas. <br>
+					* Señales de energía y potencia. <br><br><br><br>
+					<center><img src="imagenCuatro.jpg"/></center><br><br><br>
+					<font color="red" size=5>Señales pares e impares.</font><br><br>
+					Una señal <u>par</u> satisface: <i>x(-t) = x(t)</i> para todo t <br><br>
+					Una señal <u>impar</u> satisface: <i>x(-t) = -x(t)</i> para todo t <br><br>
+					Las señales pares son <i><u>simétricas.</u></i> <br><br>
+					Las señales impares son <i><u>antisimétricas.</u></i> <br><br><br>
+					<center><img src="imagenCinco.jpg"/></center><br><br>
+					<font color="red" size=5>Señales periódicas y aperiódicas.</font><br><br>
+					Una señal es periódica sí y solo sí: x(t + T<sub>0</sub>) = x(t), -&infin; < t < &infin; <br><br>
+					Donde la constante T<sub>0</sub> es el <i><u>periódo</u></i>. <br>
+					El menor valor de T<sub>0</sub> que satisface la condición de periodicidad es el <i><u>periódo fundamental</u></i> de la señal. <br>
+					Una señal que no satisface la condición de periodicidad es una <i><u>señal aperiódica.</u></i><br><br><br>
+					¿Cuál de las siguientes señales es periódica?<br><br>
+					1. X<sub>1</sub>(t) = sen 10&pi;t<br>
+					2. X<sub>2</sub>(t) = sen 20&pi;t<br>
+					3. X<sub>3</sub>(t) = sen 31t<br>
+					4. X<sub>4</sub>(t) = X<sub>1</sub>(t) + X<sub>2</sub>(t)<br>
+					5. X<sub>5</sub>(t) = X<sub>1</sub>(t) + X<sub>3</sub>(t)<br><br><br>
+					Determina las componentes par e impar de las siguientes señales:<br><br>
+					X(t) = cos t + sen t + sen t * cos t<br>
+					X(t) = 1 + t + 3t<sup>2</sup> + 5t<sup>3</sup> + 9t<sup>4</sup>	<br><br>
+					<font color="red" size=5>Señales de energía y potencia.</font><br><br>
+					Una señal es de <i><u>energía</u></i> sí y solo sí su energía total <i>E</i> cumple 0 < <i>E</i> < &infin;<br><br>
+					Una señal es de <i><u>potencia</u></i> sí y solo sí su potencia promedio <i>P</i> cumple 0 < <i>P</i> < &infin;<br><br>
+				</h4><br><br><br><br><br>
+				<center><font color="red"><a name="sistemas"><h1>3. Clasificación de los sistemas</h1></a></font></center>
+				<h4>
+					Un <i><u>sistema continuo</u></i> es un dispositivo que opera sobre una señal continua en el tiempo, llamada <i><u>entrada</u></i> o <i><u>excitación</u></i>, para producir otra señal continua en el tiempo llamada <i><u>salida</u></i> o <i><u>respuesta</u></i> del sistema.<br><br>
+					La señal de entrada x(t) es <i><u>transformada</u></i> por el sistema en la señal y(t).<br> 
+					Esta relación se expresa: <i>y(t) &equiv; T[x(t)]</i> donde el operador <i>T</i> denota la transformación o procesamiento efectuado a x(t)<br><br><br>
+					<center><img src="imagenSeis.jpg"/></center><br><br>
+					<font color="red" size=5>Clasificación de sistemas.</font><br><br>
+					<font color="blue" size=4><i><u>Sistemas sin memoria ó estáticos.</u></i></font> Cuando la salida de cualquier valor de <i>t</i> depende solo de la entrada en el mismo valor de <i>t</i>. <br><br>
+					<i>y(t) = x(t)<sup>2</sup><br><br>
+					y(t) = Rx(t)     <br><br>
+					y(t) = ax(t) + bx<sup>3</sup>(t)</i><br><br><br>
+					<font color="blue" size=4><i><u>Sistemas con memoria ó dinámicos.</u></i></font> Cuando la salida en un valor <i>t</i> depende de las entradas en el intervalo:<br> <i>[t - T, t]</i>, T &ge; 0, se dice que el sistema tiene memoria de duración T. Si T = 0 el sistema es <i><u>estático.</u></i><br><br>
+					<i>
+						y(t) = x(t) + 3x(t-1)<br><br>
+						y(t) = <sup>1</sup>/<sub>C</sub> &int;<sub>&infin;</sub><sup>t</sup> x(&tau;)d&tau;
+					</i><br><br>
+					<font color="blue" size=4><i><u>Sistemas invariantes con el tiempo.</u></i></font> Son aquellos sistemas para los que un desplazamiento temporal de la secuencia de entrada provoca el mismo desplazamiento en la secuencia de la salida.<br><br>
+					Si para <i>x<sub>1</sub>(t) = x(t - t<sub>0</sub>)</i> se produce <i>y<sub>1</sub>(t) = y(t-t<sub>0</sub>)</i><br><br>
+					<font color="blue" size=4><i><u>Sistemas variantes con el tiempo.</u></i></font> Aquellos donde la salida cumple con <i>y<sub>1</sub>(t) &ne; y(t - t<sub>0</sub>)</i>, incluso para un solo valor de <i>t<sub>0</sub></i> .<br><br><br>
+					Determinar si los siguientes sistemas son invariantes:<br><br>
+						<i>y(t) = x(t) - x(t - 1)</i><br><br>
+						<i>y(t) = tx(t)</i><br><br>
+						<i>y(t) = x(-t)</i><br><br>
+						<i>y(t) = x(t) cos &omega;t</i><br><br>
+					<font color="blue" size=4><i><u>Sistemas lineales. </u></i></font> Definidos por el principio de superposición.<br><br>
+					Sean <i>y<sub>i</sub>(t) e y<sub>2</sub>(t)</i> las respuestas a las entradas x<sub>1</sub>(t) y <i>x<sub>2</sub>(t)</i>, el sistema es lineal solo sí:<br><br>
+
+					<center><i>T[&alpha;<sub>1</sub>x<sub>1</sub>(t) + &alpha;<sub>2</sub>x<sub>2</sub>(t)] = &alpha;<sub>1</sub>T[x<sub>1</sub>(t)] + &alpha;<sub>2</sub>T[x<sub>2</sub>(t)] = &alpha;<sub>1</sub>y<sub>1</sub>(t) + &alpha;<sub>2</sub>y<sub>2</sub>(t)</i></center><br>
+					donde &alpha;<sub>1</sub> y &alpha;<sub>2</sub> son constantes arbitrarias.<br><br>
+
+					<font color="blue" size=4><i><u>Sistemas no lineales.</u></i></font> Aquellos que no satisfacen el principio de superposición.<br><br>
+					Un sistema lineal en <i>reposo</i>, es aquel que a una entrada cero, produce una salida cero.<br>
+					Un sistema que produce una salida diferente de cero cuando la entrada es cero <i>no</i> está en <i>reposo</i>, o <i>no</i> es <i>lineal</i>.<br><br><br>
+					Determinar si los siguientes sistemas son lineales:<br><br>
+					<i>y(t) = tx(t)</i><br><br>
+					<i>y(t) = x(t<sup>2</sup>)</i><br><br>
+					<i>y(t) = x<sup>2</sup>(t)</i><br><br>
+					<i>y(t) = Ax(t) + B</i><br><br>
+					<i>y(t) = e<sup>x(t)</sup></i><br><br>
+
+					<font color="blue" size=4><i><u>Sistemas causales.</u></i></font>
+					Cuando para cualquier valor de t<sub>0</sub> , el valor de la secuencia de salida en t = t<sub>0</sub> depende solo de los valores de entrada para t &le; t<sub>0</sub> . Es decir, la salida depende de las entradas pasadas y presentes.<br><br>
+					<font color="blue" size=4><i><u>Sistemas no causales.</u></i></font>  
+					Aquellos que no cumplen las condiciones de causalidad.<br><br>
+					<i>y(t) = x(t) - x(t-1)</i><br>
+					<i>y(t) = ax(t)</i><br>
+					<i>y(t) = &int;x(t); &infin; < t < t<sub>0</sub></i><br>
+					<i>y(t) = x(t) + 3x(t + 4)</i><br>
+					<i>y(t) = x(t<sup>2</sup>)</i><br>
+					<i>y(t) = x(2t)</i><br>
+					<i>y(t) = x(-t)</i><br><br><br>
+					<font color="blue" size=4><i><u>Sistemas estables.</u></i></font>
+					Un sistema es estable en el sentido de entrada acotada y salida acotada.<br>
+					La entrada x(t) está acotada si existe un valor finito positivo B<sub>x</sub> tal que |x(t)| &le; B<sub>x</sub> < &infin;, para todo <i>t</i>.<br>
+					La estabilidad requiere que para cualquier entrada acotada exista un valor finito positivo fijo B<sub>y</sub> , tal que |y(t)| &le; B<sub>y</sub> < &infin;, para todo <i>t</i>.<br><br><br>
+					<font color="blue" size=4><i><u>Sistemas inestables.</u></i></font>
+					Aquellos que no cumplen con las condiciones de estabilidad.<br><br><br><br><br><br>
+					
+					<center><font color="red"><a name="energia"><h1>4. Energía y potencia de las señales</h1></a></font></center><br><br>
+					Para una señal arbitraria x(t), la cual es compleja en general, su energía total normalizada a una unidad de resistencia es:<br><br>
+					<center><img src="imagenSiete.jpg"/></center><br>
+					Y la potencia promedio normalizada a una unidad de resistencia es: <br><br>
+					<center><img src="imagenOcho.jpg"/></center><br><br>
+					Entonces, x(t) es una señal de <i><u>energía</u></i> sí y solo sí 0 < E < &infin;, de modo que P = 0.<br><br>
+					x(t) es una señal de <i><u>potencia</u></i> sí y solo sí 0 < P < &infin;, con lo cual E = &infin;.<br><br>
+					Las señales que no cumplen con ninguna de las condiciones mencionadas no son señales ni de energía, ni de potencia.<br><br>
+					Determinar si las siguientes señales son de energía o potencia:<br><br>
+					<i>y(t) = Ae<sup>-&alpha;t</sup>u(t) con &alpha; > 0</i><br>
+					<i>y(t) = Au(t)</i><br>
+					<i>x(t) = Acos(&omega;t + &theta;)</i><br><br><br>
+
+					<font color="red" size=5>Potencia promedio de una señal periódica.</font><br><br>
+					La potencia se calcula sobre un solo periodo T<sub>0</sub>, esto es:<br><br>
+					<center><img src="imagenNueve.jpg"/></center><br><br>
+					Determinar la potencia de:        <i>x(t) = Ae<sup> j(&omega;t + &theta;)</sup></i><br><br><br>
+
+					<font color="red" size=5>Densidad espectral de Energía y Potencia.</font><br><br>
+					Para una señal de energía x(f), cuando una función de frecuencia se integra obtenemos su <i><u>densidad espectral de energía</u></i> G(f). Por definición, tenemos que la energía total de la señal es: <br><br>
+					<center><img src="imagenDiez.jpg"/></center><br><br>
+					Determina el espectro de densidad de potencia y la potencia promedio en la banda de 10Hz a 20Hz de la señal:<br>
+					<center><i>x(t) = 10cos(10 &pi;t + <sup>&pi;</sup>/<sub>7</sub>) + 4sin(30 &pi;t + <sup>&pi;</sup>/<sub>8</sub>)</i></center>
+				</h4> <br><br><br>
+				<center><h1>Fin de conceptos básicos</h1></center> <br>
+
+			</p>
+	</article>
+</div>
+
+
+
+
+
+<nav><center>
+				<ul>
+					<li><a href="index.html">Ir a Inicio</a></li>
+					<li><a href="tas.html">Ir a: Teoría de la aproximación de las señales</a></li>
+				</ul></center>
+			</nav>
+
+		</body>
+		</html>

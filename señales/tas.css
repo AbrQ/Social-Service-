@@ -1,0 +1,62 @@
+header{
+	background:#2c3e50;
+	color:#fff;
+}
+
+.main{
+	background: #c0392b;
+	color:#fff;
+	border-radius: 28px 28px 28px 28px;
+	-moz-border-radius: 28px 28px 28px 28px;
+	-webkit-border-radius: 28px 28px 28px 28px;
+	border: 0px dashed #000000;
+}
+
+.cuerpo
+{
+	width:1660px;
+	margin:0 auto;
+	text-align:justify-all;
+}
+
+h1
+{
+	font-family: 'Special Elite', cursive;
+}
+h2
+{
+	font-family: 'Special Elite', cursive;
+}
+h4{
+	font-family: 'Quicksand', sans-serif;
+}
+
+a
+{
+	color:  #000000;
+	font-weight: bold;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+nav ul li
+{
+	display: inline-block;
+	margin-right:20px;
+	color: #000000;
+	cursor: pointer;
+	padding: 5px;
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+}
+nav ul li:hover
+{
+	background-color:  #DBAF36;
+	color: #DBAF36;
+	border-radius: 5px;
+}
+nav ul li a
+{
+	color: #000000;
+	text-decoration: none;
+}

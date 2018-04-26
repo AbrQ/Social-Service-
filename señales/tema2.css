@@ -1,0 +1,42 @@
+body
+{
+	background-color: #FFFFFF;
+	font-family: "Helvetica",Arial;
+	width:90%;
+	margin:auto;
+	min-width:10px;
+	max-width:2000px;
+}
+
+header{
+	background:#2c3e50;
+	color:#fff;
+}
+
+.main{
+	background: #c0392b;
+	color:#fff;
+	border-radius: 28px 28px 28px 28px;
+	-moz-border-radius: 28px 28px 28px 28px;
+	-webkit-border-radius: 28px 28px 28px 28px;
+	border: 0px dashed #000000;
+}
+
+#cuerpo
+{
+	width:960px;
+	margin:0 auto;
+	text-align:justify;
+}
+
+h1
+{
+	font-family: 'Special Elite', cursive;
+}
+h2
+{
+	font-family: 'Special Elite', cursive;
+}
+h4{
+	font-family: 'Quicksand', sans-serif;
+}

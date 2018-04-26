@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Muestreo y conversion A/D</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">  
+
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+	<link rel="stylesheet" href="tas.css">	
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h2>Muestreo de Señales y Conversión A/D</h2>
+		</div>
+	</header>
+
+	<center>
+			<nav>
+				<ul>
+					<li><a href="index.html">PÁGINA PRINCIPAL</a></li>
+					<li><a href="contenido.html">BIBLIOGRAFÍA SUGERIDA</a></li>
+					<li><a href="contenidoCurso.html">CONTENIDO DEL CURSO</a></li>
+					<li><a href="ejercicios.html">EJERCICIOS</a></li>
+				</ul>
+			</nav>
+			</center>
+
+	<div class="container">
+		<section class="main row">
+		<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+				<h2>Contenido</h2>
+				1. Conversión A/D<br>
+				2. Teorema del muestreo<br>
+			</p>
+		</article>
+	</section>
+</div>
+
+<div class ="cuerpo">
+		<article class = "col-xs-12 col-sm-8 col-md-9 col-lg-9">
+			<p>
+			<br><br><center><font color="red"><h1>1. Conversión A/D.</h1></font></center><br><br>
+			<h4>
+				Muchas señales de interés práctico son analógicas: voz, sísmicas, biológicas, radar, sónar, audio, video, etc.<br>
+				Para procesarlas por medios digitales es necesario convertirlas en una señal digital: <u>Conversión Analógica a Digital.</u><br><br>
+				Esta conversión consta de tres pasos:<br><br>
+				<i>* Muestreo</i><br>
+				<i>* Cuantización</i><br>
+				<i>* Codificación</i><br><br>
+				<center><img src="imagenCienSeis.jpg"/></center><br><br>
+			</h4>
+			<h2>Muestreo.</h2><br><br>
+			<h4>
+				Conversión de una señal continua a discreta en el tiempo a través de <u>muestras</u> de la señal tomadas en instantes discretos de tiempo.<br><br>
+				<i>X<sub>a</sub>(t)</i> es la entrada al "muestreador"<br><br>
+				<i>X(nT) &equiv; X(n)</i> es la salida<br><br>
+				<i>T</i> es el intervalo de muestreo<br><br><br><br>
+			</h4>
+			<h2>Cuantización</h2><br><br>
+			<h4>
+			Conversión de una señal discreta de valores continuos a valores discretos (digital).<br>
+			El valor de cada muestra se representa con un elemento seleccionado de un conjunto finito de posibles valores.<br>
+			La diferencia <i>x(n) - x<sub>q</sub>(n)</i> se llama <i>error de cuantización.</i><br><br><br><br>
+		</h4>
+		<h2>Codificación</h2><br><br>
+		<h4>
+			Cada valor discreto cuantizado <i>x<sub>q</sub>(n)</i> se representa mediante una secuencia binaria <i>b-bit.</i><br><br>
+			<center><img src="imagenCienSiete.jpg"/></center><br><br>
+			* En ocaciones es deseable convertir la señal digital procesada en analógica: <u><i>Convertidor D/A</i></u><br><br>
+			* Se conectan puntos a través de <i><u>interpolación</u></i><br><br>
+			* Para señales con <i><u>contenido de frecuencia limitado</u></i> (ancho de banda finito), el <i><u>teorema de muestreo</u></i> especifíca la forma óptima de interpolar<br><br>
+			* El muestreo no produce pérdida de información ni distorsión si la señal tiene un ancho de banda finito<br><br>
+			* Una señal análoga se puede reconstruir de muestras si la tasa de muestreo es lo suficientemente alta para no producir <u><i>aliasing</i></u><br><br>
+			* La cuantización es irreversible y produce distorsión, la cual depende de la <i><u>resolución</u></i> (número de bits)<br><br>
+			* La resolución implica costo, lo mismo que la tasa de muestreo<br><br>
+			<center><img src="imagenCienOcho.jpg"/></center><br><br><br><br>
+		</h4>
+		<h2>Muestreo de señales analógicas</h2><br><br>
+		<h4>
+			<u>Muestreo periódico o uniforme:</u> <i>x(n) = x<sub>a</sub>(nT), - &infin; < n < + &infin;</i><br><br>
+			<i>T</i> es el período de muestreo<br>
+			<i>F<sub>s</sub></i> = 1/T es la tasa o frecuencia de muestreo (# de muestras por segundo ó Hertz)<br> <i>t = nT = n/F<sub>s</sub></i><br>
+			Relación entre al F de la señal analógica y la <i>f</i> de la señal digital: <i>f = F/F<sub>s</sub></i><br><br>
+			<center><img src="imagenCienNueve.jpg"/></center><br><br>
+			<center>MUESTREO</center><br><br>
+			<center><img src="imagenCienDiez.jpg"/></center><br><br>
+			<center><img src="imagenCienOnce.jpg"/></center><br><br>
+			El muestreo introduce ambigüedad, la frecuencia más alta en una señal continua que puede distinguirse cuando la señal se muestrea a F<sub>s</sub> = 1/T es f<sub>max</sub> = ½ Fs = 1/(2T)  y ω<sub>max</sub> = πF<sub>s</sub> = π/T<br><br><br><br>
+			Sean x<sub>1</sub>(t) = cos20&pi;t y x<sub>2</sub>(t) = cos100&pi;t con F<sub>s</sub> = 40 Hz.<br>
+			¿Cuáles son x<sub>1</sub>(n) y x<sub>2</sub>(n)?<br><br>
+			<center><img src="imagenCienDoce.jpg"/></center><br><br>
+			x<sub>a</sub>(t) = 3cos100&pi;t<br><br>
+			a) ¿Cuál sería la Fs mínima para evitar aliasing?<br>
+			b) Si Fs =  200 Hz ¿Cuál sería x(n)?<br>
+			c) Si Fs =  75 Hz ¿Cuál sería x(n)?<br>
+			d) ¿Cuál sería la frecuencia 0 < F < Fs/2 de una señal senoidal con muestras idénticas a x(n) en c)?<br><br>
+			Respuestas<br><br>
+			a) Fs ≥ 100 Hz<br>
+			b) x(n) = 3 cos(π n/2)<br>
+			c) x(n) = 3 cos(2 π n/3)<br>
+			d) F = 25 Hz y<sub>a</sub>(t) = 3 cos 50 π t
+			</h4><br><br>
+			<br><br><center><font color="red"><h1>2. Teorema del muestreo.</h1></font></center><br><br>
+			<h4>
+				Dada una señal analógica, ¿cómo podemos seleccionar el período de muestreo T, o su tasa de muestreo Fs?<br><br>
+				Información acerca de la señal: <u>contenido de frecuencia.</u><br><br>
+				Señal de voz: Menor a 3000 Hz<br>
+				Señal de TV: Menor a 5 MHz<br><br>
+				La informacion se encuentra en las amplitudes, frecuencias y fases de los componentes de la señal.<br><br>
+				Conociendo la máxima frecuencia contenida en una señal, se puede determinar la tasa de muestreo.
+				Podemos suponer que las componentes de una señal no exceden a una frecuencia conocida Fmax.
+				Con Fmax podemos determinar la tasa de muestreo adecuada a nuestra señal.
+				Para evitar ambigüedades como el aliasing, la tasa de muestreo se selecciona de modo que:<br><br>
+				<center>Fs > 2Fmax</center><br><br>
+			</h4>
+			<h2>Teorema del muestreo</h2><br><br>
+			<h4>
+				La frecuencia más alta contenida en una señal analógica x<sub>a</sub>(t) es F<sub>max</sub> = B y si la señal se muestrea a una tasa F<sub>s</sub> > 2F<sub>max</sub> ≡ 2B, entonces x<sub>a</sub>(t) puede recuperarse exactamente a partir de los valores de sus muestras empleando la función de interpolación:<br><br>
+				<center>g(t) = sen2πBt / 2πBt</center><br><br>
+				Así x<sub>a</sub>(t) puede expresarse como: <img src="imagenCienTrece.jpg"/><br><br>
+				donde x<sub>a</sub>(n/F<sub>s</sub>) = x<sub>a</sub>(nT) ≡ x(n) son las muestras de x<sub>a</sub>(t).<br><br>
+				Cuando el muestreo se efectúa con la tasa mínima  F<sub>s</sub> = 2B, la fórmula de reconstrucción es:<br><br>
+				<center><img src="imagenCienCatorce.jpg"/></center><br><br>
+				La tasa de muestreo F<sub>N</sub> = 2B = 2F<sub>max</sub> se conoce como <u>tasa de Nyquist.</u><br><br>
+			</h4><br><br>
+			<h2>Ejercicios</h2><br><br>
+			<h4>
+			1. ¿Cuál es la tasa de Nyquist para x<sub>a</sub>(t)?<br><br>
+			x<sub>a</sub>(t) = 3 cos50&pi;t + 10 sen300&pi;t - cos100&pi;t<br><br>
+			2. ¿Cuál es la tasa de Nyquist para x<sub>a</sub>(t)?<br><br>
+			x<sub>a</sub>(t) = 3 cos2000&pi;t + 5 sen6000&pi;t + 10 cos12000&pi;t<br><br>
+			Si Fs = 5000 muestras/s ¿Qué señal se obtiene después del muestreo?<br><br>
+			¿Cuál es la señal reconstruida y<sub>a</sub>(t) si usamos interpolación ideal?<br><br><br><br><br>
+			</h4>
+			<h2>
+				Cuantización de señales de amplitud continua.
+			</h2><br><br>
+			<h4>
+				Una señal digital es una secuencia de muestras  donde cada una se representa con un número finito de dígitos.
+				El proceso de convertir una señal discreta de amplitud continua en una señal digital expresando cada valor de una muestra con un número finito de dígitos es llamado <u>cuantización</u>.
+				El error introducido en la representación de una señal de valores continuos con un conjunto finito de niveles discretos de valores se llama <u>error o ruido de cuantización</u>.<br><br>
+				La operación de cuantización de las muestras x(n) se representa como:<br><br>
+				<center>x<sub>q</sub>(n) = Q[x(n)]</center><br><br>
+				El error de cuantización se representa como:<br><br>
+                <center>e<sub>q</sub>(n) = x<sub>q</sub>(n) – x(n)</center><br><br>
+				<center><img src="imagenCienQuince.jpg"/></center><br><br><br>
+			</h4>
+			<h2>Operaciones involucradas en la cuantización.</h2><br><br>
+			<h4>
+			1. Truncamiento<br>
+ 			2. Redondeo<br>
+			val = 0.59049,	t(val) = 0.5,		r(val) = 0.6<br><br>
+			Los valores permitidos en una señal digital se llaman <u>niveles de cuantización.</u><br>
+			La distancia entre dos niveles sucesivos de cuantización se llama <u>paso de cuantización o resolución (Δ).</u><br>
+			El error de cuantización e<sub>q</sub>(n) en el redondeo es:<br><br>
+			<center>-Δ/2 ≤ e<sub>q</sub>(n) ≤ Δ/2</center><br><br>
+			Si x<sub>min</sub> y x<sub>max</sub> representan los valores mínimo y máximo de x(n) y L es el número de niveles de cuantización, entonces:<br><br>
+			<center>Δ = (x<sub>max</sub> - x<sub>min</sub> ) / (L - 1)</center><br><br>
+			x<sub>max</sub> - x<sub>min</sub> es el <u>rango dinámico</u> de la señal.<br><br>
+			<center><img src="imagenCienDiesciseis.jpg"/></center><br><br><br>
+			<center><img src="imagenCienDiecisiete.jpg"/></center><br><br><br>
+			</h4>
+			<h2>Codificación de muestras cuantizadas</h2><br><br>
+			<h4>
+				La codificación en los convertidores A/D asigna un número binario único a cada nivel de cuantización.
+				Una palabra de b bits crea 2<sup>b</sup> números binarios diferentes.
+				Entonces tenemos 2<sup>b</sup> ≥ L ó b ≥ sup[log<sub>2</sub>L]
+			</h4><br><br><br>
+			<h2>Conversión D/A.</h2><br><br>
+			<h4>
+				La tarea del CDA es interpolar las muestras.<br>
+				El teorema del muestreo especifica la interpolación óptima para señales de banda limitada.<br>
+				Suele emplearse un postfiltrado a la señal obtenida de esta conversión. Ej, Filtro de aplanamiento.<br><br><br>
+				<center><img src="imagenCienDieciocho.jpg"/></center><br><br><br>
+				La señal discreta x(n) = 6.35 cos (πn/10) es cuantizada con una resolución<br> 
+				a) Δ = 0.1 <br>
+				b) Δ = 0.02<br>
+				¿Cuántos bits se requieren en cada caso y con cuántos niveles de cuantización L?
+
+			</h4><br><br><br><br>
+			<center><h2>Fin de tema: Muestreo de Señales y Conversión A/D</h2></center><br><br>
+		</p>
+	</article>
+</div>
+
+
+
+
+
+<nav><center>
+				<ul>
+					<li><a href="index.html">Ir a Inicio</a></li>
+					<li><a href="analisis.html">Ir a: Análisis de señales discretas en el dominio de la frecuencia</a></li>
+				</ul></center>
+			</nav>
+
+		</body>
+		</html>
+
